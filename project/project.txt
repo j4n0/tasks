@@ -1,0 +1,78 @@
+
+Coordinator
+    [ ] Login empty screen
+    [ ] Main empty screen
+
+Login I
+    [ ] Web login to get the CODE. Screen with wkwebview.
+
+Network client I
+
+    [ ] Use curl to get the /token.json response
+		[ ] Codable AccessTokenResponse - response from /token.json
+    [ ] Offer a mocked implementation
+		[ ] Teamwork network client
+		
+			
+Login II
+    [ ] Network client to get the TOKEN.
+        [ ] Configuration with company.
+        [ ] PlistConfiguration reading from a plist
+    [ ] Authentication header containing TOKEN or API KEY
+    [ ] Storage for an authentication
+		[ ] UserDefaults
+	
+	
+Application start
+    [ ] Check logged state
+        1. is there an authentication header stored? --yes--> we are logged, go to main
+        2. go to login
+
+
+Main
+    [ ] Screen showing the tasks.
+        [ ] Generic datasource
+        [ ] Cells for header and cells
+        [ ] Peek & Pop
+
+
+Task editor
+    [ ] Form to input tasks
+    [ ] Siri shortcut
+
+
+Api Key support
+    [ ] Add API Key to the configuration.
+    [ ] Expand check logged state to API Key
+        1. is there an authentication header stored? --yes--> we are logged, go to main
+        2. is there an API KEY in the plist? --yes--> store header, go to main
+        3. go to login
+
+
+Network client II
+
+    [ ] Use curl to get the /tasks.json response
+		[ ] Company network client
+			[ ] AllTasksResponse - response from /tasks.json
+
+
+Network client III
+
+    [ ] Reusable API client
+        [ ] Encapsulate queries on a "Resource"
+        [ ] Create a URL Request from a Resource
+        [ ] Wrap results in a "Result" kind of object
+
+    Teamwork network client. Used only during authentication.
+        [ ] Query object
+
+    Company network client. Used to access the company API.
+        Tasks
+            [ ] Query object
+
+
+Glossary
+--------
+CODE = string returned after successful login
+TOKEN = string returned after passing the code to the /token.json endpoint
+API KEY = string you may get on your account section
