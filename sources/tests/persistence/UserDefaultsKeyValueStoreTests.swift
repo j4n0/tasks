@@ -9,6 +9,11 @@ class UserDefaultsKeyValueStoreTests: XCTestCase
     let company = "Acme"
     let authorizationHeaderValue = "DEADBEEF"
     
+    override func tearDown() {
+        super.tearDown()
+        store.authentication = nil
+    }
+    
     func testWriteReadAuthentication()
     {
         store.authentication = Authentication(company: company, authorizationHeader: ["Authorization": authorizationHeaderValue])
