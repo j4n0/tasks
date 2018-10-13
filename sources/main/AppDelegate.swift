@@ -1,29 +1,25 @@
+
+import os
 import UIKit
+
+// Set true to attempt to read the API key and company from a plist configuration file
+private let useConfiguration = false
+
+var environment: Environment = {
+    let configuration: Configuration? = useConfiguration ? PlistConfiguration(forResource: "configuration", ofType: "plist") : nil
+    let env = AppEnvironment(configuration: configuration)
+    return env
+}()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
 {
     var window: UIWindow?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         window = UIWindow()
-        installRootViewController()
+        window?.rootViewController = environment.coordinator.navigationController
         window?.makeKeyAndVisible()
         return true
-    }
-    
-    func applicationWillResignActive    (_ application: UIApplication) {}
-    func applicationDidEnterBackground  (_ application: UIApplication) {}
-    func applicationWillEnterForeground (_ application: UIApplication) {}
-    func applicationDidBecomeActive     (_ application: UIApplication) {}
-    func applicationWillTerminate       (_ application: UIApplication) {}
-    
-    private func installRootViewController()
-    {
-        let navigationController = UINavigationController()
-        navigationController.navigationBar.isTranslucent = false
-        navigationController.navigationBar.isHidden = false
-        navigationController.pushViewController(UIViewController(), animated: false)
-        window?.rootViewController = navigationController
     }
 }

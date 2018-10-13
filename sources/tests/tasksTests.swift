@@ -1,6 +1,6 @@
 
 import XCTest
-@testable import tasks
+@testable import Tasks
 
 class tasksTests: XCTestCase {
 

@@ -7,11 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AD6F40221728CDA003379D4 /* UserDefaultsKeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F3FE21728CDA003379D4 /* UserDefaultsKeyValueStore.swift */; };
+		3AD6F40321728CDA003379D4 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F3FF21728CDA003379D4 /* Store.swift */; };
+		3AD6F40421728CDA003379D4 /* KeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F40021728CDA003379D4 /* KeyValueStore.swift */; };
+		3AD6F40521728CDA003379D4 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F40121728CDA003379D4 /* Authentication.swift */; };
+		3AD6F40821728D58003379D4 /* TeamworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F40721728D58003379D4 /* TeamworkClient.swift */; };
+		3AD6F40A21728D63003379D4 /* AuthenticatingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F40921728D63003379D4 /* AuthenticatingClient.swift */; };
+		3AD6F40C21728D80003379D4 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F40B21728D80003379D4 /* ApiClient.swift */; };
+		3AD6F41021728F22003379D4 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F40E21728F1A003379D4 /* CoordinatorTests.swift */; };
+		3AD6F41421728FD0003379D4 /* UserDefaultsKeyValueStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F41221728FD0003379D4 /* UserDefaultsKeyValueStoreTests.swift */; };
+		3AD6F41521728FD0003379D4 /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F41321728FD0003379D4 /* AuthenticationTests.swift */; };
 		3AEA194B2172265B0040F347 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEA194A2172265B0040F347 /* AppDelegate.swift */; };
 		3AEA19522172265C0040F347 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AEA19512172265C0040F347 /* Assets.xcassets */; };
 		3AEA19552172265C0040F347 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEA19532172265C0040F347 /* LaunchScreen.storyboard */; };
 		3AEA19602172265C0040F347 /* tasksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEA195F2172265C0040F347 /* tasksTests.swift */; };
 		3AEA196B2172265C0040F347 /* tasksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEA196A2172265C0040F347 /* tasksUITests.swift */; };
+		3AEA1A10217288250040F347 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEA1A0F217288250040F347 /* AppEnvironment.swift */; };
+		3AEA1A122172882D0040F347 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEA1A112172882D0040F347 /* Environment.swift */; };
+		3AEA1A152172886C0040F347 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEA1A142172886C0040F347 /* Configuration.swift */; };
+		3AEA1A172172887B0040F347 /* PlistConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEA1A162172887B0040F347 /* PlistConfiguration.swift */; };
+		3AEA1A19217288940040F347 /* configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AEA1A18217288940040F347 /* configuration.plist */; };
+		3AEA1A1E2172894A0040F347 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEA1A1D217289340040F347 /* Coordinator.swift */; };
+		3AEA1A222172897A0040F347 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEA1A212172897A0040F347 /* LoginViewController.swift */; };
+		3AEA1A252172898E0040F347 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEA1A242172898E0040F347 /* TasksViewController.swift */; };
+		3AEA1A2921728A600040F347 /* PlistConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEA1A2721728A600040F347 /* PlistConfigurationTests.swift */; };
+		3AEA1A2A21728A600040F347 /* PlistConfigurationTests.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AEA1A2821728A600040F347 /* PlistConfigurationTests.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +52,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3AEA19472172265B0040F347 /* tasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AD6F3FE21728CDA003379D4 /* UserDefaultsKeyValueStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeyValueStore.swift; sourceTree = "<group>"; };
+		3AD6F3FF21728CDA003379D4 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		3AD6F40021728CDA003379D4 /* KeyValueStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyValueStore.swift; sourceTree = "<group>"; };
+		3AD6F40121728CDA003379D4 /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		3AD6F40721728D58003379D4 /* TeamworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamworkClient.swift; sourceTree = "<group>"; };
+		3AD6F40921728D63003379D4 /* AuthenticatingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatingClient.swift; sourceTree = "<group>"; };
+		3AD6F40B21728D80003379D4 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		3AD6F40E21728F1A003379D4 /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
+		3AD6F41221728FD0003379D4 /* UserDefaultsKeyValueStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeyValueStoreTests.swift; sourceTree = "<group>"; };
+		3AD6F41321728FD0003379D4 /* AuthenticationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationTests.swift; sourceTree = "<group>"; };
+		3AEA19472172265B0040F347 /* Tasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AEA194A2172265B0040F347 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AEA19512172265C0040F347 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AEA19542172265C0040F347 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -44,6 +74,17 @@
 		3AEA196A2172265C0040F347 /* tasksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tasksUITests.swift; sourceTree = "<group>"; };
 		3AEA196C2172265C0040F347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AEA198021722A6B0040F347 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3AEA1A0F217288250040F347 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		3AEA1A112172882D0040F347 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		3AEA1A142172886C0040F347 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		3AEA1A162172887B0040F347 /* PlistConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistConfiguration.swift; sourceTree = "<group>"; };
+		3AEA1A18217288940040F347 /* configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = configuration.plist; sourceTree = "<group>"; };
+		3AEA1A1B217288BB0040F347 /* project.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = project.txt; sourceTree = "<group>"; };
+		3AEA1A1D217289340040F347 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		3AEA1A212172897A0040F347 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3AEA1A242172898E0040F347 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		3AEA1A2721728A600040F347 /* PlistConfigurationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistConfigurationTests.swift; sourceTree = "<group>"; };
+		3AEA1A2821728A600040F347 /* PlistConfigurationTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlistConfigurationTests.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,9 +112,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AD6F3FC21728CDA003379D4 /* persistence */ = {
+			isa = PBXGroup;
+			children = (
+				3AD6F3FD21728CDA003379D4 /* userdefaults */,
+				3AD6F40121728CDA003379D4 /* Authentication.swift */,
+			);
+			path = persistence;
+			sourceTree = "<group>";
+		};
+		3AD6F3FD21728CDA003379D4 /* userdefaults */ = {
+			isa = PBXGroup;
+			children = (
+				3AD6F3FE21728CDA003379D4 /* UserDefaultsKeyValueStore.swift */,
+				3AD6F3FF21728CDA003379D4 /* Store.swift */,
+				3AD6F40021728CDA003379D4 /* KeyValueStore.swift */,
+			);
+			path = userdefaults;
+			sourceTree = "<group>";
+		};
+		3AD6F40621728D2E003379D4 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				3AD6F40721728D58003379D4 /* TeamworkClient.swift */,
+				3AD6F40921728D63003379D4 /* AuthenticatingClient.swift */,
+				3AD6F40B21728D80003379D4 /* ApiClient.swift */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		3AD6F40D21728F0D003379D4 /* screens */ = {
+			isa = PBXGroup;
+			children = (
+				3AD6F40E21728F1A003379D4 /* CoordinatorTests.swift */,
+			);
+			path = screens;
+			sourceTree = "<group>";
+		};
+		3AD6F41121728FD0003379D4 /* persistence */ = {
+			isa = PBXGroup;
+			children = (
+				3AD6F41221728FD0003379D4 /* UserDefaultsKeyValueStoreTests.swift */,
+				3AD6F41321728FD0003379D4 /* AuthenticationTests.swift */,
+			);
+			path = persistence;
+			sourceTree = "<group>";
+		};
 		3AEA193E2172265B0040F347 = {
 			isa = PBXGroup;
 			children = (
+				3AEA1A1A217288BB0040F347 /* project */,
 				3AEA1978217226660040F347 /* sources */,
 				3AEA197C217226950040F347 /* targets */,
 				3AEA19482172265B0040F347 /* Products */,
@@ -84,7 +172,7 @@
 		3AEA19482172265B0040F347 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3AEA19472172265B0040F347 /* tasks.app */,
+				3AEA19472172265B0040F347 /* Tasks.app */,
 				3AEA195B2172265C0040F347 /* tasksTests.xctest */,
 				3AEA19662172265C0040F347 /* tasksUITests.xctest */,
 			);
@@ -104,6 +192,11 @@
 		3AEA19792172266B0040F347 /* main */ = {
 			isa = PBXGroup;
 			children = (
+				3AD6F40621728D2E003379D4 /* network */,
+				3AD6F3FC21728CDA003379D4 /* persistence */,
+				3AEA1A132172884F0040F347 /* configuration */,
+				3AEA1A0E217288180040F347 /* environment */,
+				3AEA1A0D2172874A0040F347 /* screens */,
 				3AEA194A2172265B0040F347 /* AppDelegate.swift */,
 				3AEA19512172265C0040F347 /* Assets.xcassets */,
 				3AEA19532172265C0040F347 /* LaunchScreen.storyboard */,
@@ -114,6 +207,9 @@
 		3AEA197A217226700040F347 /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				3AD6F41121728FD0003379D4 /* persistence */,
+				3AD6F40D21728F0D003379D4 /* screens */,
+				3AEA1A2621728A400040F347 /* configuration */,
 				3AEA195F2172265C0040F347 /* tasksTests.swift */,
 			);
 			path = tests;
@@ -161,12 +257,74 @@
 			path = main;
 			sourceTree = "<group>";
 		};
+		3AEA1A0D2172874A0040F347 /* screens */ = {
+			isa = PBXGroup;
+			children = (
+				3AEA1A20217289730040F347 /* tasks */,
+				3AEA1A1F2172896E0040F347 /* login */,
+				3AEA1A1D217289340040F347 /* Coordinator.swift */,
+			);
+			path = screens;
+			sourceTree = "<group>";
+		};
+		3AEA1A0E217288180040F347 /* environment */ = {
+			isa = PBXGroup;
+			children = (
+				3AEA1A0F217288250040F347 /* AppEnvironment.swift */,
+				3AEA1A112172882D0040F347 /* Environment.swift */,
+			);
+			path = environment;
+			sourceTree = "<group>";
+		};
+		3AEA1A132172884F0040F347 /* configuration */ = {
+			isa = PBXGroup;
+			children = (
+				3AEA1A142172886C0040F347 /* Configuration.swift */,
+				3AEA1A162172887B0040F347 /* PlistConfiguration.swift */,
+				3AEA1A18217288940040F347 /* configuration.plist */,
+			);
+			path = configuration;
+			sourceTree = "<group>";
+		};
+		3AEA1A1A217288BB0040F347 /* project */ = {
+			isa = PBXGroup;
+			children = (
+				3AEA1A1B217288BB0040F347 /* project.txt */,
+			);
+			path = project;
+			sourceTree = "<group>";
+		};
+		3AEA1A1F2172896E0040F347 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				3AEA1A212172897A0040F347 /* LoginViewController.swift */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		3AEA1A20217289730040F347 /* tasks */ = {
+			isa = PBXGroup;
+			children = (
+				3AEA1A242172898E0040F347 /* TasksViewController.swift */,
+			);
+			path = tasks;
+			sourceTree = "<group>";
+		};
+		3AEA1A2621728A400040F347 /* configuration */ = {
+			isa = PBXGroup;
+			children = (
+				3AEA1A2821728A600040F347 /* PlistConfigurationTests.plist */,
+				3AEA1A2721728A600040F347 /* PlistConfigurationTests.swift */,
+			);
+			path = configuration;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3AEA19462172265B0040F347 /* tasks */ = {
+		3AEA19462172265B0040F347 /* Tasks */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3AEA196F2172265C0040F347 /* Build configuration list for PBXNativeTarget "tasks" */;
+			buildConfigurationList = 3AEA196F2172265C0040F347 /* Build configuration list for PBXNativeTarget "Tasks" */;
 			buildPhases = (
 				3AEA19432172265B0040F347 /* Sources */,
 				3AEA19442172265B0040F347 /* Frameworks */,
@@ -176,9 +334,9 @@
 			);
 			dependencies = (
 			);
-			name = tasks;
+			name = Tasks;
 			productName = tasks;
-			productReference = 3AEA19472172265B0040F347 /* tasks.app */;
+			productReference = 3AEA19472172265B0040F347 /* Tasks.app */;
 			productType = "com.apple.product-type.application";
 		};
 		3AEA195A2172265C0040F347 /* tasksTests */ = {
@@ -253,7 +411,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3AEA19462172265B0040F347 /* tasks */,
+				3AEA19462172265B0040F347 /* Tasks */,
 				3AEA195A2172265C0040F347 /* tasksTests */,
 				3AEA19652172265C0040F347 /* tasksUITests */,
 			);
@@ -266,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AEA19552172265C0040F347 /* LaunchScreen.storyboard in Resources */,
+				3AEA1A19217288940040F347 /* configuration.plist in Resources */,
 				3AEA19522172265C0040F347 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +433,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AEA1A2A21728A600040F347 /* PlistConfigurationTests.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +451,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AD6F40421728CDA003379D4 /* KeyValueStore.swift in Sources */,
+				3AEA1A222172897A0040F347 /* LoginViewController.swift in Sources */,
+				3AD6F40A21728D63003379D4 /* AuthenticatingClient.swift in Sources */,
+				3AEA1A252172898E0040F347 /* TasksViewController.swift in Sources */,
+				3AD6F40221728CDA003379D4 /* UserDefaultsKeyValueStore.swift in Sources */,
 				3AEA194B2172265B0040F347 /* AppDelegate.swift in Sources */,
+				3AEA1A172172887B0040F347 /* PlistConfiguration.swift in Sources */,
+				3AD6F40321728CDA003379D4 /* Store.swift in Sources */,
+				3AEA1A1E2172894A0040F347 /* Coordinator.swift in Sources */,
+				3AD6F40821728D58003379D4 /* TeamworkClient.swift in Sources */,
+				3AEA1A122172882D0040F347 /* Environment.swift in Sources */,
+				3AEA1A152172886C0040F347 /* Configuration.swift in Sources */,
+				3AEA1A10217288250040F347 /* AppEnvironment.swift in Sources */,
+				3AD6F40521728CDA003379D4 /* Authentication.swift in Sources */,
+				3AD6F40C21728D80003379D4 /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +473,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AD6F41421728FD0003379D4 /* UserDefaultsKeyValueStoreTests.swift in Sources */,
 				3AEA19602172265C0040F347 /* tasksTests.swift in Sources */,
+				3AEA1A2921728A600040F347 /* PlistConfigurationTests.swift in Sources */,
+				3AD6F41521728FD0003379D4 /* AuthenticationTests.swift in Sources */,
+				3AD6F41021728F22003379D4 /* CoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,12 +494,12 @@
 /* Begin PBXTargetDependency section */
 		3AEA195D2172265C0040F347 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3AEA19462172265B0040F347 /* tasks */;
+			target = 3AEA19462172265B0040F347 /* Tasks */;
 			targetProxy = 3AEA195C2172265C0040F347 /* PBXContainerItemProxy */;
 		};
 		3AEA19682172265C0040F347 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3AEA19462172265B0040F347 /* tasks */;
+			target = 3AEA19462172265B0040F347 /* Tasks */;
 			targetProxy = 3AEA19672172265C0040F347 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -507,7 +685,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tasks.app/tasks";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tasks.app/Tasks";
 			};
 			name = Debug;
 		};
@@ -528,7 +706,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tasks.app/tasks";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tasks.app/Tasks";
 			};
 			name = Release;
 		};
@@ -548,7 +726,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = tasks;
+				TEST_TARGET_NAME = Tasks;
 			};
 			name = Debug;
 		};
@@ -568,7 +746,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = tasks;
+				TEST_TARGET_NAME = Tasks;
 			};
 			name = Release;
 		};
@@ -584,7 +762,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3AEA196F2172265C0040F347 /* Build configuration list for PBXNativeTarget "tasks" */ = {
+		3AEA196F2172265C0040F347 /* Build configuration list for PBXNativeTarget "Tasks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3AEA19702172265C0040F347 /* Debug */,

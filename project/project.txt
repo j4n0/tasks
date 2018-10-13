@@ -1,7 +1,7 @@
 
 Coordinator
-    [ ] Login empty screen
-    [ ] Main empty screen
+    [x] Login empty screen
+    [x] Main empty screen
 
 Login I
     [ ] Web login to get the CODE. Screen with wkwebview.
@@ -42,7 +42,7 @@ Task editor
 
 
 Api Key support
-    [ ] Add API Key to the configuration.
+    [x] Add API Key to the configuration.
     [ ] Expand check logged state to API Key
         1. is there an authentication header stored? --yes--> we are logged, go to main
         2. is there an API KEY in the plist? --yes--> store header, go to main
