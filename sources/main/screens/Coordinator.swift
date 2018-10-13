@@ -29,7 +29,8 @@ public class Coordinator
     func controller(screen: Screen) -> UIViewController {
         switch screen {
         case .login:
-            return LoginViewController()
+            let interactor = LoginInteractor(coordinator: self)
+            return LoginViewController(url: LoginDetails.loginURL, navigationDelegate: interactor)
         case .home:
             return TasksViewController()
         }

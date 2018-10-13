@@ -17,11 +17,13 @@
 		3AD6F41021728F22003379D4 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F40E21728F1A003379D4 /* CoordinatorTests.swift */; };
 		3AD6F41421728FD0003379D4 /* UserDefaultsKeyValueStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F41221728FD0003379D4 /* UserDefaultsKeyValueStoreTests.swift */; };
 		3AD6F41521728FD0003379D4 /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F41321728FD0003379D4 /* AuthenticationTests.swift */; };
+		3AD6F417217292F6003379D4 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F416217292F6003379D4 /* LoginInteractor.swift */; };
+		3AD6F41B21729658003379D4 /* XCTestCase+wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F41921729658003379D4 /* XCTestCase+wait.swift */; };
+		3AD6F41C21729658003379D4 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F41A21729658003379D4 /* LoginTests.swift */; };
 		3AEA194B2172265B0040F347 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEA194A2172265B0040F347 /* AppDelegate.swift */; };
 		3AEA19522172265C0040F347 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AEA19512172265C0040F347 /* Assets.xcassets */; };
 		3AEA19552172265C0040F347 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEA19532172265C0040F347 /* LaunchScreen.storyboard */; };
 		3AEA19602172265C0040F347 /* tasksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEA195F2172265C0040F347 /* tasksTests.swift */; };
-		3AEA196B2172265C0040F347 /* tasksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEA196A2172265C0040F347 /* tasksUITests.swift */; };
 		3AEA1A10217288250040F347 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEA1A0F217288250040F347 /* AppEnvironment.swift */; };
 		3AEA1A122172882D0040F347 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEA1A112172882D0040F347 /* Environment.swift */; };
 		3AEA1A152172886C0040F347 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEA1A142172886C0040F347 /* Configuration.swift */; };
@@ -62,6 +64,9 @@
 		3AD6F40E21728F1A003379D4 /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
 		3AD6F41221728FD0003379D4 /* UserDefaultsKeyValueStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeyValueStoreTests.swift; sourceTree = "<group>"; };
 		3AD6F41321728FD0003379D4 /* AuthenticationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationTests.swift; sourceTree = "<group>"; };
+		3AD6F416217292F6003379D4 /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		3AD6F41921729658003379D4 /* XCTestCase+wait.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+wait.swift"; sourceTree = "<group>"; };
+		3AD6F41A21729658003379D4 /* LoginTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		3AEA19472172265B0040F347 /* Tasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AEA194A2172265B0040F347 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AEA19512172265C0040F347 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,7 +76,6 @@
 		3AEA195F2172265C0040F347 /* tasksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tasksTests.swift; sourceTree = "<group>"; };
 		3AEA19612172265C0040F347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AEA19662172265C0040F347 /* tasksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tasksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AEA196A2172265C0040F347 /* tasksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tasksUITests.swift; sourceTree = "<group>"; };
 		3AEA196C2172265C0040F347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AEA198021722A6B0040F347 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3AEA1A0F217288250040F347 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
@@ -158,6 +162,15 @@
 			path = persistence;
 			sourceTree = "<group>";
 		};
+		3AD6F41821729658003379D4 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				3AD6F41921729658003379D4 /* XCTestCase+wait.swift */,
+				3AD6F41A21729658003379D4 /* LoginTests.swift */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
 		3AEA193E2172265B0040F347 = {
 			isa = PBXGroup;
 			children = (
@@ -218,7 +231,7 @@
 		3AEA197B217226730040F347 /* uitests */ = {
 			isa = PBXGroup;
 			children = (
-				3AEA196A2172265C0040F347 /* tasksUITests.swift */,
+				3AD6F41821729658003379D4 /* login */,
 			);
 			path = uitests;
 			sourceTree = "<group>";
@@ -297,6 +310,7 @@
 		3AEA1A1F2172896E0040F347 /* login */ = {
 			isa = PBXGroup;
 			children = (
+				3AD6F416217292F6003379D4 /* LoginInteractor.swift */,
 				3AEA1A212172897A0040F347 /* LoginViewController.swift */,
 			);
 			path = login;
@@ -455,6 +469,7 @@
 				3AEA1A222172897A0040F347 /* LoginViewController.swift in Sources */,
 				3AD6F40A21728D63003379D4 /* AuthenticatingClient.swift in Sources */,
 				3AEA1A252172898E0040F347 /* TasksViewController.swift in Sources */,
+				3AD6F417217292F6003379D4 /* LoginInteractor.swift in Sources */,
 				3AD6F40221728CDA003379D4 /* UserDefaultsKeyValueStore.swift in Sources */,
 				3AEA194B2172265B0040F347 /* AppDelegate.swift in Sources */,
 				3AEA1A172172887B0040F347 /* PlistConfiguration.swift in Sources */,
@@ -485,7 +500,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AEA196B2172265C0040F347 /* tasksUITests.swift in Sources */,
+				3AD6F41B21729658003379D4 /* XCTestCase+wait.swift in Sources */,
+				3AD6F41C21729658003379D4 /* LoginTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

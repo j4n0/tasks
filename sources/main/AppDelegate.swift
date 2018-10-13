@@ -17,9 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        processLaunchArguments()
         window = UIWindow()
         window?.rootViewController = environment.coordinator.navigationController
         window?.makeKeyAndVisible()
         return true
+    }
+    
+    func processLaunchArguments(){
+        if ProcessInfo.processInfo.arguments.contains("StartFromCleanSlate") {
+            // remove persistence and reinitialize the environment without configuration
+            environment.store.removeEverything()
+            environment = AppEnvironment(authentication: nil)
+        }
     }
 }
