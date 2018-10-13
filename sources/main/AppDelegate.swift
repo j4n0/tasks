@@ -1,14 +1,19 @@
 import UIKit
 
+var environment: Environment = AppEnvironment()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
 {
     var window: UIWindow?
+    var appFlowController: AppCoordinator!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow()
-        installRootViewController()
+        appFlowController = AppCoordinator()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = appFlowController
         window?.makeKeyAndVisible()
+        appFlowController.start()
         return true
     }
     
@@ -17,13 +22,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     func applicationWillEnterForeground (_ application: UIApplication) {}
     func applicationDidBecomeActive     (_ application: UIApplication) {}
     func applicationWillTerminate       (_ application: UIApplication) {}
-    
-    private func installRootViewController()
-    {
-        let navigationController = UINavigationController()
-        navigationController.navigationBar.isTranslucent = false
-        navigationController.navigationBar.isHidden = false
-        navigationController.pushViewController(UIViewController(), animated: false)
-        window?.rootViewController = navigationController
-    }
 }
