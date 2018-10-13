@@ -28,9 +28,27 @@ My access token response was:
 
 5. Store the access_token and submit further API requests to the API URL with header ``Authorization: Bearer CAFEBABE`` where *CAFEBABE* is the access token you got in the previous step.
 
+Example: get token with Curl
+----------------------------
 
-Curl with API key
------------------
+Open ``https://www.teamwork.com/launchpad/login?redirect_uri=customprotocolapp://whatever`` in your browser, login, and copy the resulting code. It will be something like customprotocolapp://whatever?code=13fb3653-669b-45ca-a710-b06e239b85d3. If you want to see the page, it’s just a bunch of JS references.
+::
+
+    curl -s https://www.teamwork.com/launchpad/login?redirect_uri=customprotocolapp://whatever | tidy
+
+Now post it:
+::
+
+    curl -s -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"code":"13fb3653-669b-45ca-a710-b06e239b85d3"}' https://www.teamwork.com/launchpad/v1/token.json | python -mjson.tool
+
+My token was ``tkn.v1_MThiNDkzNTUtNmI5MS00NmIyLThhYmQtOWYxNTdjNTBjYWFkLTM0OTcwNS4yMzA5MDcuVVM=``. Use it to read the projects.
+::
+
+    curl -v -H "Accept: application/json" -H "Authorization: Bearer tkn.v1_MThiNDkzNTUtNmI5MS00NmIyLThhYmQtOWYxNTdjNTBjYWFkLTM0OTcwNS4yMzA5MDcuVVM=" https://yat.teamwork.com/projects.json | python -mjson.tool
+
+
+Example: curl endpoint with API key
+-----------------------------------
 
 Use the following API call format:
 
@@ -45,20 +63,10 @@ Let’s try this for the account “yat” and the endpoint `/projects.json <htt
 
 Note that the ``echo -n`` avoids passing an extra new line character.
 
-Curl with authentication token
-------------------------------
+Example: curl endpoint with Token
+---------------------------------
 
-Open ``https://www.teamwork.com/launchpad/login?redirect_uri=customprotocolapp://whatever`` in your browser, login, and copy the resulting code. It will be something like customprotocolapp://whatever?code=13fb3653-669b-45ca-a710-b06e239b85d3. If you want to see the page, it’s just a bunch of JS references.
-::
-
-    curl -s https://www.teamwork.com/launchpad/login?redirect_uri=customprotocolapp://whatever | tidy
-
-Now post it:
-::
-
-    curl -s -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"code":"13fb3653-669b-45ca-a710-b06e239b85d3"}' https://www.teamwork.com/launchpad/v1/token.json | python -mjson.tool
-
-My token was ``tkn.v1_MThiNDkzNTUtNmI5MS00NmIyLThhYmQtOWYxNTdjNTBjYWFkLTM0OTcwNS4yMzA5MDcuVVM=``. Use it to read the projects.
+This is the curl one-liner to read the projects using the authentication token we got before.
 ::
 
     curl -v -H "Accept: application/json" -H "Authorization: Bearer tkn.v1_MThiNDkzNTUtNmI5MS00NmIyLThhYmQtOWYxNTdjNTBjYWFkLTM0OTcwNS4yMzA5MDcuVVM=" https://yat.teamwork.com/projects.json | python -mjson.tool
