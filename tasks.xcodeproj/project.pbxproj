@@ -24,6 +24,20 @@
 		3A057BAB2173796E00005625 /* TasksSubQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BA52173796D00005625 /* TasksSubQuery.swift */; };
 		3A057BAC2173796E00005625 /* GetAllTasksQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BA62173796D00005625 /* GetAllTasksQuery.swift */; };
 		3A057BAE21737C9900005625 /* TeamworkClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BAD21737C9900005625 /* TeamworkClientTests.swift */; };
+		3A057BBF21739C1C00005625 /* TasksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BAF21739C1C00005625 /* TasksInteractor.swift */; };
+		3A057BC021739C1C00005625 /* CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BB221739C1C00005625 /* CellType.swift */; };
+		3A057BC121739C1C00005625 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BB321739C1C00005625 /* Cell.swift */; };
+		3A057BC221739C1C00005625 /* CellViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BB421739C1C00005625 /* CellViewType.swift */; };
+		3A057BC321739C1C00005625 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BB621739C1C00005625 /* TodoCell.swift */; };
+		3A057BC421739C1C00005625 /* TodoHeaderCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BB721739C1C00005625 /* TodoHeaderCellView.swift */; };
+		3A057BC521739C1C00005625 /* TodoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BB821739C1C00005625 /* TodoCellView.swift */; };
+		3A057BC621739C1C00005625 /* TodoHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BB921739C1C00005625 /* TodoHeaderCell.swift */; };
+		3A057BC721739C1C00005625 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BBA21739C1C00005625 /* TodoModel.swift */; };
+		3A057BC821739C1C00005625 /* CollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BBC21739C1C00005625 /* CollectionDataSource.swift */; };
+		3A057BC921739C1C00005625 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BBD21739C1C00005625 /* Section.swift */; };
+		3A057BCA21739C1C00005625 /* CollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BBE21739C1C00005625 /* CollectionViewLayout.swift */; };
+		3A057BCC21739C7E00005625 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BCB21739C7E00005625 /* Then.swift */; };
+		3A057BCE21739EFE00005625 /* Array+initWithTodoItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BCD21739EFE00005625 /* Array+initWithTodoItems.swift */; };
 		3AD6F40221728CDA003379D4 /* UserDefaultsKeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F3FE21728CDA003379D4 /* UserDefaultsKeyValueStore.swift */; };
 		3AD6F40321728CDA003379D4 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F3FF21728CDA003379D4 /* Store.swift */; };
 		3AD6F40421728CDA003379D4 /* KeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F40021728CDA003379D4 /* KeyValueStore.swift */; };
@@ -108,6 +122,20 @@
 		3A057BA52173796D00005625 /* TasksSubQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksSubQuery.swift; sourceTree = "<group>"; };
 		3A057BA62173796D00005625 /* GetAllTasksQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAllTasksQuery.swift; sourceTree = "<group>"; };
 		3A057BAD21737C9900005625 /* TeamworkClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamworkClientTests.swift; sourceTree = "<group>"; };
+		3A057BAF21739C1C00005625 /* TasksInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksInteractor.swift; sourceTree = "<group>"; };
+		3A057BB221739C1C00005625 /* CellType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellType.swift; sourceTree = "<group>"; };
+		3A057BB321739C1C00005625 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		3A057BB421739C1C00005625 /* CellViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellViewType.swift; sourceTree = "<group>"; };
+		3A057BB621739C1C00005625 /* TodoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
+		3A057BB721739C1C00005625 /* TodoHeaderCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoHeaderCellView.swift; sourceTree = "<group>"; };
+		3A057BB821739C1C00005625 /* TodoCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoCellView.swift; sourceTree = "<group>"; };
+		3A057BB921739C1C00005625 /* TodoHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoHeaderCell.swift; sourceTree = "<group>"; };
+		3A057BBA21739C1C00005625 /* TodoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
+		3A057BBC21739C1C00005625 /* CollectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDataSource.swift; sourceTree = "<group>"; };
+		3A057BBD21739C1C00005625 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		3A057BBE21739C1C00005625 /* CollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewLayout.swift; sourceTree = "<group>"; };
+		3A057BCB21739C7E00005625 /* Then.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
+		3A057BCD21739EFE00005625 /* Array+initWithTodoItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+initWithTodoItems.swift"; sourceTree = "<group>"; };
 		3AD6F3FE21728CDA003379D4 /* UserDefaultsKeyValueStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeyValueStore.swift; sourceTree = "<group>"; };
 		3AD6F3FF21728CDA003379D4 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		3AD6F40021728CDA003379D4 /* KeyValueStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyValueStore.swift; sourceTree = "<group>"; };
@@ -255,6 +283,46 @@
 			path = query;
 			sourceTree = "<group>";
 		};
+		3A057BB021739C1C00005625 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				3A057BB121739C1C00005625 /* cellType */,
+				3A057BB521739C1C00005625 /* todo */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		3A057BB121739C1C00005625 /* cellType */ = {
+			isa = PBXGroup;
+			children = (
+				3A057BB221739C1C00005625 /* CellType.swift */,
+				3A057BB321739C1C00005625 /* Cell.swift */,
+				3A057BB421739C1C00005625 /* CellViewType.swift */,
+			);
+			path = cellType;
+			sourceTree = "<group>";
+		};
+		3A057BB521739C1C00005625 /* todo */ = {
+			isa = PBXGroup;
+			children = (
+				3A057BB621739C1C00005625 /* TodoCell.swift */,
+				3A057BB721739C1C00005625 /* TodoHeaderCellView.swift */,
+				3A057BB821739C1C00005625 /* TodoCellView.swift */,
+				3A057BB921739C1C00005625 /* TodoHeaderCell.swift */,
+				3A057BBA21739C1C00005625 /* TodoModel.swift */,
+			);
+			path = todo;
+			sourceTree = "<group>";
+		};
+		3A057BBB21739C1C00005625 /* datasource */ = {
+			isa = PBXGroup;
+			children = (
+				3A057BBC21739C1C00005625 /* CollectionDataSource.swift */,
+				3A057BBD21739C1C00005625 /* Section.swift */,
+			);
+			path = datasource;
+			sourceTree = "<group>";
+		};
 		3AD6F3FC21728CDA003379D4 /* persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +462,7 @@
 		3AD6F4472172A5EB003379D4 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3A057BCB21739C7E00005625 /* Then.swift */,
 				3AD6F4482172A60A003379D4 /* Encodable+dumpJSON.swift */,
 			);
 			path = extensions;
@@ -550,7 +619,12 @@
 		3AEA1A20217289730040F347 /* tasks */ = {
 			isa = PBXGroup;
 			children = (
+				3A057BB021739C1C00005625 /* cells */,
+				3A057BBB21739C1C00005625 /* datasource */,
+				3A057BBE21739C1C00005625 /* CollectionViewLayout.swift */,
+				3A057BAF21739C1C00005625 /* TasksInteractor.swift */,
 				3AEA1A242172898E0040F347 /* TasksViewController.swift */,
+				3A057BCD21739EFE00005625 /* Array+initWithTodoItems.swift */,
 			);
 			path = tasks;
 			sourceTree = "<group>";
@@ -701,38 +775,51 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A057BC921739C1C00005625 /* Section.swift in Sources */,
 				3A057BA72173796E00005625 /* TodoItem.swift in Sources */,
 				3A057BA92173796E00005625 /* Tag.swift in Sources */,
 				3AD6F43B2172A4D6003379D4 /* User.swift in Sources */,
 				3AD6F4302172A2DE003379D4 /* URLSessionProtocol.swift in Sources */,
 				3AD6F40421728CDA003379D4 /* KeyValueStore.swift in Sources */,
+				3A057BC721739C1C00005625 /* TodoModel.swift in Sources */,
 				3AD6F44D2172A90B003379D4 /* Resource.swift in Sources */,
 				3AEA1A222172897A0040F347 /* LoginViewController.swift in Sources */,
 				3A057BAA2173796E00005625 /* AllTasksResponse.swift in Sources */,
+				3A057BC521739C1C00005625 /* TodoCellView.swift in Sources */,
 				3AD6F40A21728D63003379D4 /* AuthenticatingClient.swift in Sources */,
 				3AD6F4282172A296003379D4 /* MockURLSessionDataTask.swift in Sources */,
 				3AEA1A252172898E0040F347 /* TasksViewController.swift in Sources */,
+				3A057BC421739C1C00005625 /* TodoHeaderCellView.swift in Sources */,
 				3AD6F417217292F6003379D4 /* LoginInteractor.swift in Sources */,
+				3A057BC621739C1C00005625 /* TodoHeaderCell.swift in Sources */,
 				3AD6F4332172A2FC003379D4 /* ApiResultCompletion.swift in Sources */,
+				3A057BC321739C1C00005625 /* TodoCell.swift in Sources */,
 				3AD6F4352172A314003379D4 /* RequestError.swift in Sources */,
 				3AD6F4292172A296003379D4 /* MockURLSession.swift in Sources */,
 				3AD6F4492172A60A003379D4 /* Encodable+dumpJSON.swift in Sources */,
 				3AD6F40221728CDA003379D4 /* UserDefaultsKeyValueStore.swift in Sources */,
 				3A057B852173591200005625 /* URLRequest+Resource.swift in Sources */,
 				3AEA194B2172265B0040F347 /* AppDelegate.swift in Sources */,
+				3A057BC821739C1C00005625 /* CollectionDataSource.swift in Sources */,
 				3AEA1A172172887B0040F347 /* PlistConfiguration.swift in Sources */,
 				3AD6F40321728CDA003379D4 /* Store.swift in Sources */,
 				3A057B8F2173777400005625 /* QueryDictionaryConvertible.swift in Sources */,
+				3A057BC221739C1C00005625 /* CellViewType.swift in Sources */,
 				3AD6F43F2172A4FB003379D4 /* Installation.swift in Sources */,
 				3AEA1A1E2172894A0040F347 /* Coordinator.swift in Sources */,
 				3AD6F40821728D58003379D4 /* TeamworkClient.swift in Sources */,
+				3A057BC021739C1C00005625 /* CellType.swift in Sources */,
 				3AEA1A122172882D0040F347 /* Environment.swift in Sources */,
 				3AEA1A152172886C0040F347 /* Configuration.swift in Sources */,
+				3A057BC121739C1C00005625 /* Cell.swift in Sources */,
 				3AEA1A10217288250040F347 /* AppEnvironment.swift in Sources */,
+				3A057BCC21739C7E00005625 /* Then.swift in Sources */,
 				3A057B87217361FB00005625 /* globalEnvironment.swift in Sources */,
 				3AD6F43E2172A4FB003379D4 /* Company.swift in Sources */,
 				3A057BAC2173796E00005625 /* GetAllTasksQuery.swift in Sources */,
 				3AD6F40521728CDA003379D4 /* Authentication.swift in Sources */,
+				3A057BBF21739C1C00005625 /* TasksInteractor.swift in Sources */,
+				3A057BCE21739EFE00005625 /* Array+initWithTodoItems.swift in Sources */,
 				3A057BAB2173796E00005625 /* TasksSubQuery.swift in Sources */,
 				3AD6F42D2172A2B1003379D4 /* MockedTeamworkClient.swift in Sources */,
 				3AD6F42B2172A296003379D4 /* MockedAuthenticatingClient.swift in Sources */,
@@ -740,6 +827,7 @@
 				3A057B8E2173777400005625 /* CustomDate.swift in Sources */,
 				3AD6F4312172A2DE003379D4 /* URLSessionDataTaskProtocol.swift in Sources */,
 				3AD6F40C21728D80003379D4 /* ApiClient.swift in Sources */,
+				3A057BCA21739C1C00005625 /* CollectionViewLayout.swift in Sources */,
 				3A057BA82173796E00005625 /* Predecessor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

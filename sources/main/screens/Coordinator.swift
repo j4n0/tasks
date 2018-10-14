@@ -33,7 +33,8 @@ public class Coordinator: UIResponder
             let interactor = LoginInteractor(coordinator: self)
             return LoginViewController(url: LoginDetails.loginURL, navigationDelegate: interactor)
         case .tasks:
-            return TasksViewController()
+            let interactor = TasksInteractor()
+            return TasksViewController(interactor: interactor)
         }
     }
 }
