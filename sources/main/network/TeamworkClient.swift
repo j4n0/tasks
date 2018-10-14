@@ -42,10 +42,10 @@ public class TeamworkClient: ApiClient
     
     /// Quickly add multiple tasks
     /// https://developer.teamwork.com/projects/tasks/quickly-add-multiple-tasks
-    func quickadd(projectId: String, tasks: QuickAddBody, completion: @escaping ApiResultCompletion<AllTasksResponse>) {
+    func quickadd(projectId: String, tasks: QuickAddBody, completion: @escaping ApiResultCompletion<QuickAddResponse>) {
         let data = tasks.dumpJSON()?.data(using: .utf8)
         let resource = Resource(path: "/projects/\(projectId)/tasks/quickadd.json", method: .post, httpBody: data)
-        fetch(resource: resource) { (result: ApiResult<AllTasksResponse>) in
+        fetch(resource: resource) { (result: ApiResult<QuickAddResponse>) in
             self.complete(completion: completion, result: result)
         }
     }

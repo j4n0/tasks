@@ -12,8 +12,7 @@
 		3A057B8E2173777400005625 /* CustomDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057B8C2173777400005625 /* CustomDate.swift */; };
 		3A057B8F2173777400005625 /* QueryDictionaryConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057B8D2173777400005625 /* QueryDictionaryConvertible.swift */; };
 		3A057B97217378EB00005625 /* AllTasksResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057B92217378EB00005625 /* AllTasksResponseTests.swift */; };
-		3A057B98217378EB00005625 /* AllTasksResponse2.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A057B93217378EB00005625 /* AllTasksResponse2.json */; };
-		3A057B99217378EB00005625 /* AllTasksResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A057B94217378EB00005625 /* AllTasksResponse.json */; };
+		3A057B99217378EB00005625 /* allTasksResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A057B94217378EB00005625 /* allTasksResponse.json */; };
 		3A057B9A217378EB00005625 /* GetAllTasksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057B95217378EB00005625 /* GetAllTasksTests.swift */; };
 		3A057B9B217378EB00005625 /* TasksSubQueryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057B96217378EB00005625 /* TasksSubQueryTests.swift */; };
 		3A057B9D2173793700005625 /* allTasks.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A057B9C2173793700005625 /* allTasks.json */; };
@@ -57,6 +56,8 @@
 		3A057BF72173D50200005625 /* projectsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A057BF62173D50200005625 /* projectsResponse.json */; };
 		3A057BFA2173D56600005625 /* ProjectsResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BF92173D56600005625 /* ProjectsResponseTests.swift */; };
 		3A057BFC2173D5AA00005625 /* projectsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A057BFB2173D5AA00005625 /* projectsResponse.json */; };
+		3A057BFE2173DEB800005625 /* taskListsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A057BFD2173DEB800005625 /* taskListsResponse.json */; };
+		3A057C002173DF0D00005625 /* quickaddResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A057BFF2173DF0D00005625 /* quickaddResponse.json */; };
 		3AD6F40221728CDA003379D4 /* UserDefaultsKeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F3FE21728CDA003379D4 /* UserDefaultsKeyValueStore.swift */; };
 		3AD6F40321728CDA003379D4 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F3FF21728CDA003379D4 /* Store.swift */; };
 		3AD6F40421728CDA003379D4 /* KeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F40021728CDA003379D4 /* KeyValueStore.swift */; };
@@ -129,8 +130,7 @@
 		3A057B8C2173777400005625 /* CustomDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDate.swift; sourceTree = "<group>"; };
 		3A057B8D2173777400005625 /* QueryDictionaryConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryDictionaryConvertible.swift; sourceTree = "<group>"; };
 		3A057B92217378EB00005625 /* AllTasksResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTasksResponseTests.swift; sourceTree = "<group>"; };
-		3A057B93217378EB00005625 /* AllTasksResponse2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllTasksResponse2.json; sourceTree = "<group>"; };
-		3A057B94217378EB00005625 /* AllTasksResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllTasksResponse.json; sourceTree = "<group>"; };
+		3A057B94217378EB00005625 /* allTasksResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allTasksResponse.json; sourceTree = "<group>"; };
 		3A057B95217378EB00005625 /* GetAllTasksTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAllTasksTests.swift; sourceTree = "<group>"; };
 		3A057B96217378EB00005625 /* TasksSubQueryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksSubQueryTests.swift; sourceTree = "<group>"; };
 		3A057B9C2173793700005625 /* allTasks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allTasks.json; sourceTree = "<group>"; };
@@ -174,6 +174,8 @@
 		3A057BF62173D50200005625 /* projectsResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = projectsResponse.json; sourceTree = "<group>"; };
 		3A057BF92173D56600005625 /* ProjectsResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsResponseTests.swift; sourceTree = "<group>"; };
 		3A057BFB2173D5AA00005625 /* projectsResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = projectsResponse.json; sourceTree = "<group>"; };
+		3A057BFD2173DEB800005625 /* taskListsResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = taskListsResponse.json; sourceTree = "<group>"; };
+		3A057BFF2173DF0D00005625 /* quickaddResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quickaddResponse.json; sourceTree = "<group>"; };
 		3AD6F3FE21728CDA003379D4 /* UserDefaultsKeyValueStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeyValueStore.swift; sourceTree = "<group>"; };
 		3AD6F3FF21728CDA003379D4 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		3AD6F40021728CDA003379D4 /* KeyValueStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyValueStore.swift; sourceTree = "<group>"; };
@@ -284,8 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				3A057B92217378EB00005625 /* AllTasksResponseTests.swift */,
-				3A057B93217378EB00005625 /* AllTasksResponse2.json */,
-				3A057B94217378EB00005625 /* AllTasksResponse.json */,
+				3A057B94217378EB00005625 /* allTasksResponse.json */,
 				3A057B95217378EB00005625 /* GetAllTasksTests.swift */,
 				3A057B96217378EB00005625 /* TasksSubQueryTests.swift */,
 			);
@@ -383,6 +384,7 @@
 		3A057BDA2173AAA600005625 /* mocks */ = {
 			isa = PBXGroup;
 			children = (
+				3AD6F44F2172A96A003379D4 /* MockedAuthenticatingClientTests.swift */,
 				3A057BAD21737C9900005625 /* MockedTeamworkClientTests.swift */,
 			);
 			path = mocks;
@@ -413,7 +415,6 @@
 			children = (
 				3A057BF22173D3BA00005625 /* ProjectsQuery.swift */,
 				3A057BF42173D45800005625 /* ProjectsResponse.swift */,
-				3A057BF62173D50200005625 /* projectsResponse.json */,
 			);
 			path = projects;
 			sourceTree = "<group>";
@@ -498,7 +499,10 @@
 		3AD6F4222172A296003379D4 /* teamworkClient */ = {
 			isa = PBXGroup;
 			children = (
+				3A057BFF2173DF0D00005625 /* quickaddResponse.json */,
+				3A057BFD2173DEB800005625 /* taskListsResponse.json */,
 				3A057B9C2173793700005625 /* allTasks.json */,
+				3A057BF62173D50200005625 /* projectsResponse.json */,
 				3AD6F42C2172A2B1003379D4 /* MockedTeamworkClient.swift */,
 			);
 			path = teamworkClient;
@@ -542,7 +546,6 @@
 				3AD6F4412172A56A003379D4 /* endpoints */,
 				3A057BDA2173AAA600005625 /* mocks */,
 				3A057BDD2173AB6300005625 /* teamworkClientConfiguration.plist */,
-				3AD6F44F2172A96A003379D4 /* MockedAuthenticatingClientTests.swift */,
 				3AD6F44E2172A96A003379D4 /* RequestErrorTests.swift */,
 				3A057BDB2173AADE00005625 /* TeamworkClientTests.swift */,
 			);
@@ -856,6 +859,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A057BF72173D50200005625 /* projectsResponse.json in Resources */,
+				3A057BFE2173DEB800005625 /* taskListsResponse.json in Resources */,
+				3A057C002173DF0D00005625 /* quickaddResponse.json in Resources */,
 				3AEA19552172265C0040F347 /* LaunchScreen.storyboard in Resources */,
 				3AEA1A19217288940040F347 /* configuration.plist in Resources */,
 				3AEA19522172265C0040F347 /* Assets.xcassets in Resources */,
@@ -875,8 +880,7 @@
 				3A057BDE2173AB6300005625 /* teamworkClientConfiguration.plist in Resources */,
 				3AEA1A2A21728A600040F347 /* PlistConfigurationTests.plist in Resources */,
 				3AD6F4462172A5B3003379D4 /* token.json in Resources */,
-				3A057B98217378EB00005625 /* AllTasksResponse2.json in Resources */,
-				3A057B99217378EB00005625 /* AllTasksResponse.json in Resources */,
+				3A057B99217378EB00005625 /* allTasksResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

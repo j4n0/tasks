@@ -4,19 +4,51 @@ import XCTest
 
 class MockedTeamworkClientTests: XCTestCase
 {
-    // when passed a mocked session that returns the JSON for an AccessTokenResponse
+    let client = MockedTeamworkClient()
+    
+    func checkResult<T>(exp: XCTestExpectation, result: ApiResult<T>){
+        switch result {
+        case .success(let response): XCTAssertNotNil(response)
+        case .error(let error): XCTFail(error.localizedDescription)
+        }
+        exp.fulfill()
+        XCTAssertTrue(client.mockedSession.nextDataTask.resumeWasCalled)
+    }
+    
     func testAllTasks()
     {
-        let allTasksExpectation = expectation(description: "get all tasks")
-        let client = MockedTeamworkClient()
+        let exp = expectation(description: "Get all tasks across projects")
         client.allTasks { (result: ApiResult<AllTasksResponse>) in
-            switch result {
-            case .success(let response): XCTAssertNotNil(response)
-            case .error(let error): XCTFail(error.localizedDescription)
-            }
-            allTasksExpectation.fulfill()
+            self.checkResult(exp: exp, result: result)
         }
-        XCTAssertTrue(client.mockedSession.nextDataTask.resumeWasCalled)
-        wait(for: [allTasksExpectation], timeout: 1)
+        wait(for: [exp], timeout: 1)
+    }
+    
+    func testTaskLists()
+    {
+        let exp = expectation(description: "Get all task lists across projects")
+        client.taskLists(query: nil) { (result: ApiResult<TaskListsResponse>) in
+            self.checkResult(exp: exp, result: result)
+        }
+        wait(for: [exp], timeout: 1)
+    }
+    
+    func testQuickAdd()
+    {
+        let exp = expectation(description: "Get all task lists across projects")
+        let body = QuickAddBody(content: "one\ntwo")
+        client.quickadd(projectId: "", tasks: body) { (result: ApiResult<QuickAddResponse>) in
+            self.checkResult(exp: exp, result: result)
+        }
+        wait(for: [exp], timeout: 1)
+    }
+    
+    func testProjects()
+    {
+        let exp = expectation(description: "Retrieves all projects")
+        client.projects(query: nil) { (result: ApiResult<ProjectsResponse>) in
+            self.checkResult(exp: exp, result: result)
+        }
+        wait(for: [exp], timeout: 1)
     }
 }
