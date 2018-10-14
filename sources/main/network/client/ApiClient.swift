@@ -50,7 +50,6 @@ public class ApiClient
                 completion(ApiResult.error(RequestError.noDataReturned))
                 return
             }
-            print(httpResponse.allHeaderFields)
             
             // parse and return the response
             let result: ApiResult<T> = self.parse(data)

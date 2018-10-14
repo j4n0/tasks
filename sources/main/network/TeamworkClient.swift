@@ -26,12 +26,23 @@ public class TeamworkClient: ApiClient
     func allTasks(completion: @escaping ApiResultCompletion<AllTasksResponse>) {
         let resource = Resource(path: "/tasks.json")
         fetch(resource: resource) { (result: ApiResult<AllTasksResponse>) in
-            switch result {
-            case .success(_):
-                completion(result)
-            case .error(let e):
-                completion(.error(e))
-            }
+            self.complete(completion: completion, result: result)
+        }
+    }
+    
+    func taskLists(completion: @escaping ApiResultCompletion<TaskListsResponse>) {
+        let resource = Resource(path: "/tasklists.json")
+        fetch(resource: resource) { (result: ApiResult<TaskListsResponse>) in
+            self.complete(completion: completion, result: result)
+        }
+    }
+    
+    func complete<T>(completion: @escaping ApiResultCompletion<T>, result: ApiResult<T>){
+        switch result {
+        case .success(_):
+            completion(result)
+        case .error(let e):
+            completion(.error(e))
         }
     }
 }

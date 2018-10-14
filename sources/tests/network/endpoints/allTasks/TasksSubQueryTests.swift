@@ -4,11 +4,11 @@ import XCTest
 
 class TasksSubQueryTests: XCTestCase
 {
-    let randomDate = YYYYMMDDDate(date: Date())
-    let randomDateAndTime = YYYYMMDDHHmmssDate(date: Date())
-    let randomString: String = "DEADBEEF".shuffled().map { String($0) }.joined()
-    let randomBool = Bool.random()
-    let randomInt = UInt.random(in: 0 ... 10)
+    let randomDate = RandomValues.date_YYYYMMDD
+    let randomDateAndTime = RandomValues.dateTime_YYYYMMDDHHmmss
+    let randomString: String = RandomValues.randomString
+    let randomBool = RandomValues.randomBool
+    let randomInt = RandomValues.randomUInt
     
     func testQueryDictionary()
     {

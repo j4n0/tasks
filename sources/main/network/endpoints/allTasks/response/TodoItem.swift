@@ -119,6 +119,5 @@ public struct TodoItem: Codable
         case userFollowingChanges = "userFollowingChanges"
         case userFollowingComments = "userFollowingComments"
         case viewEstimatedTime
-
     }
 }
