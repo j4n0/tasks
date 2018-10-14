@@ -1,4 +1,5 @@
 
+import os
 import Foundation
 
 class PlistConfiguration: Configuration
@@ -13,6 +14,7 @@ class PlistConfiguration: Configuration
     
     init?(forResource resource: String, ofType type: String, bundle: Bundle? = nil) {
         guard let dictionary = Plist(forResource: resource, ofType: type, bundle: bundle).dictionary else {
+            os_log("Didn’t find %@.%@ in the bundle %@", resource, type, "\(bundle as Any)")
             return nil
         }
         self.company = dictionary[Keys.company.rawValue]

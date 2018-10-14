@@ -23,16 +23,38 @@ public class TeamworkClient: ApiClient
         return URLSession(configuration: config)
     }
     
+    /// Get all tasks across all projects
+    /// https://developer.teamwork.com/projects/tasks/get-all-tasks-across-all-projects
     func allTasks(completion: @escaping ApiResultCompletion<AllTasksResponse>) {
-        let resource = Resource(path: "/tasks.json")
+        fetch(resource: "/tasks.json") { (result: ApiResult<AllTasksResponse>) in
+            self.complete(completion: completion, result: result)
+        }
+    }
+    
+    /// Get all task lists for a project
+    /// https://developer.teamwork.com/projects/task-lists/get-all-task-lists-for-a-project
+    func taskLists(query: TaskListsQuery? = nil, completion: @escaping ApiResultCompletion<TaskListsResponse>) {
+        let resource = Resource(path: "/tasklists.json", query: query?.unwrappedQueryDictionary() ?? [:])
+        fetch(resource: resource) { (result: ApiResult<TaskListsResponse>) in
+            self.complete(completion: completion, result: result)
+        }
+    }
+    
+    /// Quickly add multiple tasks
+    /// https://developer.teamwork.com/projects/tasks/quickly-add-multiple-tasks
+    func quickadd(projectId: String, tasks: QuickAddBody, completion: @escaping ApiResultCompletion<AllTasksResponse>) {
+        let data = tasks.dumpJSON()?.data(using: .utf8)
+        let resource = Resource(path: "/projects/\(projectId)/tasks/quickadd.json", method: .post, httpBody: data)
         fetch(resource: resource) { (result: ApiResult<AllTasksResponse>) in
             self.complete(completion: completion, result: result)
         }
     }
     
-    func taskLists(completion: @escaping ApiResultCompletion<TaskListsResponse>) {
-        let resource = Resource(path: "/tasklists.json")
-        fetch(resource: resource) { (result: ApiResult<TaskListsResponse>) in
+    /// Quickly add multiple tasks
+    /// https://developer.teamwork.com/projects/tasks/quickly-add-multiple-tasks
+    func projects(query: ProjectsQuery? = nil, completion: @escaping ApiResultCompletion<ProjectsResponse>) {
+        let resource = Resource(path: "/projects.json", query: query?.unwrappedQueryDictionary() ?? [:])
+        fetch(resource: resource) { (result: ApiResult<ProjectsResponse>) in
             self.complete(completion: completion, result: result)
         }
     }

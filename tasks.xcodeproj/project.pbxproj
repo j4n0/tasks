@@ -46,6 +46,17 @@
 		3A057BDE2173AB6300005625 /* teamworkClientConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A057BDD2173AB6300005625 /* teamworkClientConfiguration.plist */; };
 		3A057BE02173B0DF00005625 /* taskListsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A057BDF2173B0DF00005625 /* taskListsResponse.json */; };
 		3A057BE22173B10C00005625 /* TaskListsResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BE12173B10C00005625 /* TaskListsResponseTests.swift */; };
+		3A057BE52173B9FD00005625 /* QuickAddBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BE42173B9FD00005625 /* QuickAddBody.swift */; };
+		3A057BE82173BAC100005625 /* QuickAddBodyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BE72173BAC100005625 /* QuickAddBodyTests.swift */; };
+		3A057BEA2173BB2500005625 /* quickAddBody.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A057BE92173BB2500005625 /* quickAddBody.json */; };
+		3A057BEC2173D04400005625 /* QuickAddResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BEB2173D04400005625 /* QuickAddResponse.swift */; };
+		3A057BEE2173D11800005625 /* QuickAddResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BED2173D11800005625 /* QuickAddResponseTests.swift */; };
+		3A057BF02173D14800005625 /* quickaddResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A057BEF2173D14800005625 /* quickaddResponse.json */; };
+		3A057BF32173D3BA00005625 /* ProjectsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BF22173D3BA00005625 /* ProjectsQuery.swift */; };
+		3A057BF52173D45800005625 /* ProjectsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BF42173D45800005625 /* ProjectsResponse.swift */; };
+		3A057BF72173D50200005625 /* projectsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A057BF62173D50200005625 /* projectsResponse.json */; };
+		3A057BFA2173D56600005625 /* ProjectsResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BF92173D56600005625 /* ProjectsResponseTests.swift */; };
+		3A057BFC2173D5AA00005625 /* projectsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A057BFB2173D5AA00005625 /* projectsResponse.json */; };
 		3AD6F40221728CDA003379D4 /* UserDefaultsKeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F3FE21728CDA003379D4 /* UserDefaultsKeyValueStore.swift */; };
 		3AD6F40321728CDA003379D4 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F3FF21728CDA003379D4 /* Store.swift */; };
 		3AD6F40421728CDA003379D4 /* KeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6F40021728CDA003379D4 /* KeyValueStore.swift */; };
@@ -152,6 +163,17 @@
 		3A057BDD2173AB6300005625 /* teamworkClientConfiguration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = teamworkClientConfiguration.plist; sourceTree = "<group>"; };
 		3A057BDF2173B0DF00005625 /* taskListsResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = taskListsResponse.json; sourceTree = "<group>"; };
 		3A057BE12173B10C00005625 /* TaskListsResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListsResponseTests.swift; sourceTree = "<group>"; };
+		3A057BE42173B9FD00005625 /* QuickAddBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickAddBody.swift; sourceTree = "<group>"; };
+		3A057BE72173BAC100005625 /* QuickAddBodyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickAddBodyTests.swift; sourceTree = "<group>"; };
+		3A057BE92173BB2500005625 /* quickAddBody.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = quickAddBody.json; sourceTree = "<group>"; };
+		3A057BEB2173D04400005625 /* QuickAddResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickAddResponse.swift; sourceTree = "<group>"; };
+		3A057BED2173D11800005625 /* QuickAddResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickAddResponseTests.swift; sourceTree = "<group>"; };
+		3A057BEF2173D14800005625 /* quickaddResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quickaddResponse.json; sourceTree = "<group>"; };
+		3A057BF22173D3BA00005625 /* ProjectsQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsQuery.swift; sourceTree = "<group>"; };
+		3A057BF42173D45800005625 /* ProjectsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsResponse.swift; sourceTree = "<group>"; };
+		3A057BF62173D50200005625 /* projectsResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = projectsResponse.json; sourceTree = "<group>"; };
+		3A057BF92173D56600005625 /* ProjectsResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsResponseTests.swift; sourceTree = "<group>"; };
+		3A057BFB2173D5AA00005625 /* projectsResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = projectsResponse.json; sourceTree = "<group>"; };
 		3AD6F3FE21728CDA003379D4 /* UserDefaultsKeyValueStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeyValueStore.swift; sourceTree = "<group>"; };
 		3AD6F3FF21728CDA003379D4 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		3AD6F40021728CDA003379D4 /* KeyValueStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyValueStore.swift; sourceTree = "<group>"; };
@@ -366,6 +388,45 @@
 			path = mocks;
 			sourceTree = "<group>";
 		};
+		3A057BE32173B9F000005625 /* quickadd */ = {
+			isa = PBXGroup;
+			children = (
+				3A057BE42173B9FD00005625 /* QuickAddBody.swift */,
+				3A057BEB2173D04400005625 /* QuickAddResponse.swift */,
+			);
+			path = quickadd;
+			sourceTree = "<group>";
+		};
+		3A057BE62173BAB300005625 /* quickadd */ = {
+			isa = PBXGroup;
+			children = (
+				3A057BEF2173D14800005625 /* quickaddResponse.json */,
+				3A057BED2173D11800005625 /* QuickAddResponseTests.swift */,
+				3A057BE72173BAC100005625 /* QuickAddBodyTests.swift */,
+				3A057BE92173BB2500005625 /* quickAddBody.json */,
+			);
+			path = quickadd;
+			sourceTree = "<group>";
+		};
+		3A057BF12173D39600005625 /* projects */ = {
+			isa = PBXGroup;
+			children = (
+				3A057BF22173D3BA00005625 /* ProjectsQuery.swift */,
+				3A057BF42173D45800005625 /* ProjectsResponse.swift */,
+				3A057BF62173D50200005625 /* projectsResponse.json */,
+			);
+			path = projects;
+			sourceTree = "<group>";
+		};
+		3A057BF82173D54000005625 /* projects */ = {
+			isa = PBXGroup;
+			children = (
+				3A057BFB2173D5AA00005625 /* projectsResponse.json */,
+				3A057BF92173D56600005625 /* ProjectsResponseTests.swift */,
+			);
+			path = projects;
+			sourceTree = "<group>";
+		};
 		3AD6F3FC21728CDA003379D4 /* persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -455,6 +516,8 @@
 		3AD6F4362172A4AB003379D4 /* endpoints */ = {
 			isa = PBXGroup;
 			children = (
+				3A057BF12173D39600005625 /* projects */,
+				3A057BE32173B9F000005625 /* quickadd */,
 				3A057BCF2173A38D00005625 /* taskLists */,
 				3A057B9E2173796D00005625 /* allTasks */,
 				3AD6F4372172A4BC003379D4 /* accessToken */,
@@ -489,6 +552,8 @@
 		3AD6F4412172A56A003379D4 /* endpoints */ = {
 			isa = PBXGroup;
 			children = (
+				3A057BF82173D54000005625 /* projects */,
+				3A057BE62173BAB300005625 /* quickadd */,
 				3A057BD72173A75C00005625 /* tasklists */,
 				3A057B91217378EB00005625 /* allTasks */,
 				3AD6F4422172A56F003379D4 /* accessToken */,
@@ -790,6 +855,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A057BF72173D50200005625 /* projectsResponse.json in Resources */,
 				3AEA19552172265C0040F347 /* LaunchScreen.storyboard in Resources */,
 				3AEA1A19217288940040F347 /* configuration.plist in Resources */,
 				3AEA19522172265C0040F347 /* Assets.xcassets in Resources */,
@@ -802,7 +868,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A057BFC2173D5AA00005625 /* projectsResponse.json in Resources */,
+				3A057BEA2173BB2500005625 /* quickAddBody.json in Resources */,
 				3A057BE02173B0DF00005625 /* taskListsResponse.json in Resources */,
+				3A057BF02173D14800005625 /* quickaddResponse.json in Resources */,
 				3A057BDE2173AB6300005625 /* teamworkClientConfiguration.plist in Resources */,
 				3AEA1A2A21728A600040F347 /* PlistConfigurationTests.plist in Resources */,
 				3AD6F4462172A5B3003379D4 /* token.json in Resources */,
@@ -833,6 +902,7 @@
 				3AD6F4302172A2DE003379D4 /* URLSessionProtocol.swift in Sources */,
 				3AD6F40421728CDA003379D4 /* KeyValueStore.swift in Sources */,
 				3A057BC721739C1C00005625 /* TodoModel.swift in Sources */,
+				3A057BEC2173D04400005625 /* QuickAddResponse.swift in Sources */,
 				3AD6F44D2172A90B003379D4 /* Resource.swift in Sources */,
 				3AEA1A222172897A0040F347 /* LoginViewController.swift in Sources */,
 				3A057BAA2173796E00005625 /* AllTasksResponse.swift in Sources */,
@@ -854,13 +924,16 @@
 				3A057BC821739C1C00005625 /* CollectionDataSource.swift in Sources */,
 				3AEA1A172172887B0040F347 /* PlistConfiguration.swift in Sources */,
 				3AD6F40321728CDA003379D4 /* Store.swift in Sources */,
+				3A057BF52173D45800005625 /* ProjectsResponse.swift in Sources */,
 				3A057B8F2173777400005625 /* QueryDictionaryConvertible.swift in Sources */,
 				3A057BC221739C1C00005625 /* CellViewType.swift in Sources */,
+				3A057BE52173B9FD00005625 /* QuickAddBody.swift in Sources */,
 				3AD6F43F2172A4FB003379D4 /* Installation.swift in Sources */,
 				3AEA1A1E2172894A0040F347 /* Coordinator.swift in Sources */,
 				3AD6F40821728D58003379D4 /* TeamworkClient.swift in Sources */,
 				3A057BC021739C1C00005625 /* CellType.swift in Sources */,
 				3AEA1A122172882D0040F347 /* Environment.swift in Sources */,
+				3A057BF32173D3BA00005625 /* ProjectsQuery.swift in Sources */,
 				3AEA1A152172886C0040F347 /* Configuration.swift in Sources */,
 				3A057BC121739C1C00005625 /* Cell.swift in Sources */,
 				3AEA1A10217288250040F347 /* AppEnvironment.swift in Sources */,
@@ -895,15 +968,18 @@
 				3A057BAE21737C9900005625 /* MockedTeamworkClientTests.swift in Sources */,
 				3A057B9A217378EB00005625 /* GetAllTasksTests.swift in Sources */,
 				3AEA19602172265C0040F347 /* tasksTests.swift in Sources */,
+				3A057BE82173BAC100005625 /* QuickAddBodyTests.swift in Sources */,
 				3AEA1A2921728A600040F347 /* PlistConfigurationTests.swift in Sources */,
 				3AD6F41521728FD0003379D4 /* AuthenticationTests.swift in Sources */,
 				3AD6F4442172A583003379D4 /* TokenResponseTests.swift in Sources */,
 				3A057BD92173A7D200005625 /* TaskListsQueryTests.swift in Sources */,
 				3AD6F44B2172A648003379D4 /* XCTestCase+decodeJsonFile.swift in Sources */,
 				3A057B9B217378EB00005625 /* TasksSubQueryTests.swift in Sources */,
+				3A057BEE2173D11800005625 /* QuickAddResponseTests.swift in Sources */,
 				3A057B97217378EB00005625 /* AllTasksResponseTests.swift in Sources */,
 				3AD6F4512172A96A003379D4 /* MockedAuthenticatingClientTests.swift in Sources */,
 				3AD6F41021728F22003379D4 /* CoordinatorTests.swift in Sources */,
+				3A057BFA2173D56600005625 /* ProjectsResponseTests.swift in Sources */,
 				3A057BE22173B10C00005625 /* TaskListsResponseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

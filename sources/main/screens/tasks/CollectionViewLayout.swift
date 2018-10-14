@@ -1,4 +1,5 @@
 
+import os
 import UIKit
 
 enum CollectionDisplay {
@@ -21,14 +22,23 @@ class CollectionViewLayout: UICollectionViewFlowLayout
     {
         self.init()
         self.display = display
-        self.minimumLineSpacing = 0
-        self.minimumInteritemSpacing = 5
-        self.headerReferenceSize = CGSize(width: 0, height: 44)
+        self.minimumLineSpacing = 0 // minimum spacing to use between lines of items in the grid
+        self.minimumInteritemSpacing = 5 // minimum spacing to use between items in the same row
+        self.headerReferenceSize = CGSize(width: 0, height: 60) // default sizes to use for section headers
         self.configLayout()
     }
     
     func configLayout()
     {
+        guard let collectionView = collectionView else {
+            os_log("Collection view not prepared. It is nil. Skipping layout.")
+            return
+        }
+        guard collectionView.frame.width > 0 else {
+            os_log("Collection view not prepared. It has 0 width. Skipping layout.")
+            return
+        }
+        os_log("Collection view ready, configuring layout with display %@", "\(display)")
         switch display {
         case .inline:
             self.scrollDirection = .horizontal
@@ -46,9 +56,11 @@ class CollectionViewLayout: UICollectionViewFlowLayout
         case .list:
             self.scrollDirection = .vertical
             if let collectionView = self.collectionView {
-                self.itemSize = CGSize(width: collectionView.frame.width , height: 44)
+                self.itemSize = CGSize(width: collectionView.frame.width , height: 60)
             }
         }
+        os_log("layout scrollDirection is %d", scrollDirection.rawValue)
+        os_log("layout item size is %@", "\(itemSize)")
     }
     
     override func invalidateLayout() {

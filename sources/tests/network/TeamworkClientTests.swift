@@ -4,7 +4,7 @@ import XCTest
 
 class TeamworkClientTests: XCTestCase
 {
-    let configuration = PlistConfiguration(forResource: "teamworkClientConfiguration", ofType: "plist")
+    let configuration = PlistConfiguration(forResource: "teamworkClientConfiguration", ofType: "plist", bundle: Bundle(for: TeamworkClientTests.self))
     
     var authentication: Authentication? {
         guard let apiKey = configuration?.apiKey, let company = configuration?.company else {
@@ -64,5 +64,41 @@ class TeamworkClientTests: XCTestCase
             }
         }
         wait(for: [taskListsExpectation], timeout: 3)
+    }
+    
+    func testQuickAdd(){
+        let quickAddExpectation = expectation(description: "get all task lists across projects")
+        let projectId = "1"
+        let quickAddBody = QuickAddBody(content: "one\ntwo")
+        client?.quickadd(projectId: projectId, tasks: quickAddBody) { result in
+            switch result {
+            case .success(let response):
+                guard let status = response.status, status == "OK" else {
+                    XCTFail("Expected OK status. Got \(response.status as Any)")
+                    return
+                }
+                quickAddExpectation.fulfill()
+            case .error(let e):
+                XCTFail("\(e)")
+            }
+        }
+        wait(for: [quickAddExpectation], timeout: 3)
+    }
+    
+    func testProjects(){
+        let projectsExpectation = expectation(description: "Retrieves all projects.")
+        client?.projects(query: nil) { result in
+            switch result {
+            case .success(let response):
+                guard let status = response.status, status == "OK" else {
+                    XCTFail("Expected OK status. Got \(response.status as Any)")
+                    return
+                }
+                projectsExpectation.fulfill()
+            case .error(let e):
+                XCTFail("\(e)")
+            }
+        }
+        wait(for: [projectsExpectation], timeout: 3)
     }
 }

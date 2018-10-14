@@ -44,11 +44,14 @@ extension QueryDictionaryConvertible
                 throw QueryDictionaryConvertibleError.unknownPropertyType(value)
             }
         }
-        
         if let keys = renamePropertyKeys {
             result = result.replaceKeys(oldAndNewKeys: keys)
         }
         return result
+    }
+    
+    func unwrappedQueryDictionary() -> [String: String] {
+        return (try? queryDictionary()) ?? [:]
     }
     
     var renamePropertyKeys: [String: String]? { return nil }

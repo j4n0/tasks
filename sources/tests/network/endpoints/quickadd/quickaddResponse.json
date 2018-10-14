@@ -1,0 +1,14 @@
+{
+    "content": "this is task one\n this is task two\nthis is task three",
+    "tasklistId": 1,
+    "creator-id": 123,
+    "notify": false,
+    "private": false,
+    "todo-item": {
+        "responsible-party-id": "0",
+        "start-date": "",
+        "due-date": "",
+        "priority": "",
+        "description": ""
+    }
+}
