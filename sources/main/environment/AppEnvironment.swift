@@ -2,12 +2,12 @@
 import Foundation
 import os
 
-class AppEnvironment: Environment
+public class AppEnvironment: Environment
 {
-    var coordinator = Coordinator(screen: .login)
-    var store: StoreType = Store<UserDefaultsKeyValueStore>()
-    var teamworkClient: TeamworkClient?
-    var authenticatingClient = AuthenticatingClient()
+    public var coordinator = Coordinator(screen: .login)
+    public var store: StoreType = Store<UserDefaultsKeyValueStore>()
+    public var teamworkClient: TeamworkClient?
+    public var authenticatingClient = AuthenticatingClient()
     
     convenience init(configuration: Configuration?){
         if let company = configuration?.company, let apiKey = configuration?.apiKey {
@@ -28,8 +28,16 @@ class AppEnvironment: Environment
                 os_log("Found an authentication in the store.")
             }
         }
-        self.coordinator = Coordinator(screen: auth == nil ? .login : .home)
+        self.coordinator = Coordinator(screen: auth == nil ? .login : .tasks)
         self.teamworkClient = TeamworkClient(authentication: auth)
+        observeAccessToken()
+    }
+    
+    public func removeAuthentication(){
+        os_log(.debug, log: OSLog.default, "Removing authentication.")
+        store.removeEverything()
+        coordinator = Coordinator(screen: .login)
+        teamworkClient = TeamworkClient(authentication: nil)
         observeAccessToken()
     }
     

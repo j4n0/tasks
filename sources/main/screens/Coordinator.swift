@@ -1,16 +1,17 @@
 
 import UIKit
 
-public class Coordinator
+public class Coordinator: UIResponder
 {
     enum Screen {
         case login
-        case home
+        case tasks
     }
     
     private(set) var navigationController: UINavigationController!
     
     init(screen: Screen){
+        super.init()
         self.navigationController = UINavigationController(rootViewController: controller(screen: screen))
         navigationController.navigationBar.isTranslucent = false
         navigationController.navigationBar.isHidden = true
@@ -31,7 +32,7 @@ public class Coordinator
         case .login:
             let interactor = LoginInteractor(coordinator: self)
             return LoginViewController(url: LoginDetails.loginURL, navigationDelegate: interactor)
-        case .home:
+        case .tasks:
             return TasksViewController()
         }
     }

@@ -1,0 +1,79 @@
+{
+    "STATUS": "OK",
+    "todo-items": [
+        {
+            "id": 1,
+            "canComplete": true,
+            "comments-count": 0,
+            "description": "Test Task Sub Item",
+            "has-reminders": false,
+            "has-unread-comments": false,
+            "private": 0,
+            "content": "Test Task",
+            "order": 1995,
+            "project-id": 223699,
+            "project-name": "New hires",
+            "todo-list-id": 667675,
+            "todo-list-name": "Testing default list",
+            "tasklist-private": false,
+            "tasklist-isTemplate": false,
+            "status": "new",
+            "company-name": "Teamwork",
+            "company-id": 78494,
+            "creator-id": 157140,
+            "creator-firstname": "Holly",
+            "creator-lastname": "Smith",
+            "completed": false,
+            "start-date": "",
+            "due-date-base": "",
+            "due-date": "",
+            "created-on": "2018-01-29T11:49:00Z",
+            "last-changed-on": "2018-02-06T08:37:28Z",
+            "position": 1995,
+            "estimated-minutes": 0,
+            "priority": "",
+            "progress": 0,
+            "harvest-enabled": false,
+            "parentTaskId": "",
+            "lockdownId": "",
+            "tasklist-lockdownId": "",
+            "has-dependencies": 0,
+            "has-predecessors": 0,
+            "hasTickets": false,
+            "tags": [
+                {
+                    "id": 17062,
+                    "name": "API",
+                    "color": "#2f8de4"
+                },
+                {
+                    "id": 17102,
+                    "name": "documentation",
+                    "color": "#2f8de4"
+                },
+                {
+                    "id": 17097,
+                    "name": "bugs",
+                    "color": "#2f8de4"
+                }
+            ],
+            "timeIsLogged": "0",
+            "attachments-count": 0,
+            "responsible-party-ids": "157302",
+            "responsible-party-id": "157302",
+            "responsible-party-names": "Roisin M.",
+            "responsible-party-type": "Person",
+            "responsible-party-firstname": "Roisin",
+            "responsible-party-lastname": "Smith",
+            "responsible-party-summary": "Roisin M.",
+            "predecessors": [],
+            "canEdit": true,
+            "viewEstimatedTime": true,
+            "creator-avatar-url": "https://s3-eu-west-1.amazonaws.com/tw-eu-files/437949/userAvatar/twia_48d6f52851b177a01334bd95b32c49fb.png",
+            "canLogTime": true,
+            "userFollowingComments": false,
+            "userFollowingChanges": false,
+            "DLM": 0
+        }
+    ]
+}

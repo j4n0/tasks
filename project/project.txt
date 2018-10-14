@@ -4,27 +4,27 @@ Coordinator
     [x] Main empty screen
 
 Login I
-    [ ] Web login to get the CODE. Screen with wkwebview.
+    [x] Web login to get the CODE. Screen with wkwebview.
 
 Network client I
 
-    [ ] Use curl to get the /token.json response
-		[ ] Codable AccessTokenResponse - response from /token.json
-    [ ] Offer a mocked implementation
-		[ ] Teamwork network client
+    [x] Use curl to get the /token.json response
+		[x] Codable AccessTokenResponse - response from /token.json
+    [x] Offer a mocked implementation
+		[x] Teamwork network client
 		
 			
 Login II
-    [ ] Network client to get the TOKEN.
-        [ ] Configuration with company.
-        [ ] PlistConfiguration reading from a plist
-    [ ] Authentication header containing TOKEN or API KEY
-    [ ] Storage for an authentication
-		[ ] UserDefaults
+    [x] Network client to get the TOKEN.
+        [x] Configuration with company.
+        [x] PlistConfiguration reading from a plist
+    [x] Authentication header containing TOKEN or API KEY
+    [x] Storage for an authentication
+		[x] UserDefaults
 	
 	
 Application start
-    [ ] Check logged state
+    [x] Check logged state
         1. is there an authentication header stored? --yes--> we are logged, go to main
         2. go to login
 
@@ -51,24 +51,24 @@ Api Key support
 
 Network client II
 
-    [ ] Use curl to get the /tasks.json response
-		[ ] Company network client
-			[ ] AllTasksResponse - response from /tasks.json
+    [x] Use curl to get the /tasks.json response
+		[x] Company network client
+			[x] AllTasksResponse - response from /tasks.json
 
 
 Network client III
 
-    [ ] Reusable API client
-        [ ] Encapsulate queries on a "Resource"
-        [ ] Create a URL Request from a Resource
-        [ ] Wrap results in a "Result" kind of object
+    [x] Reusable API client
+        [x] Encapsulate queries on a "Resource"
+        [x] Create a URL Request from a Resource
+        [x] Wrap results in a "Result" kind of object
 
     Teamwork network client. Used only during authentication.
-        [ ] Query object
+        [x] Query object
 
     Company network client. Used to access the company API.
         Tasks
-            [ ] Query object
+            [x] Query object
 
 
 Glossary

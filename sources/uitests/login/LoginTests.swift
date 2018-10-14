@@ -13,6 +13,7 @@ class LoginTests: XCTestCase
         continueAfterFailure = false
         app = XCUIApplication()
         app.launchArguments.append("StartFromCleanSlate")
+        app.launchArguments.append("RemoveAuthenticationOnTerminate")
         app.launch()
     }
     

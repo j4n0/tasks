@@ -22,7 +22,24 @@ class LoginInteractor: NSObject
         guard let code = request.valueOfQueryItem(name: LoginDetails.loginCodeQueryItem) else {
             return
         }
-        os_log("%@",code)
+        environment.authenticatingClient.accessToken(authenticationCode: code) { (result) in
+            switch result {
+            case .success(let response):
+                guard let accessToken = response.accessToken, let company = response.installation?.company.name else {
+                    self.coordinator.alert(title: "Error", message: "The server didn’t return authentication data.", okAction: { (action) in
+                        self.coordinator.show(screen: .login)
+                    })
+                    return
+                }
+                environment.store.authentication = Authentication(company: company, accessToken: accessToken )
+                DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(2), execute: {
+                    // let the user read the Login Successful message.
+                    self.coordinator.show(screen: .tasks)
+                })
+            case .error(let e):
+                os_log(.debug, log: OSLog.default, "Downloading all tasks: ", e.localizedDescription)
+            }
+        }
     }
 }
 
@@ -45,3 +62,5 @@ fileprivate extension URLRequest
             .flatMap { $0.value }
     }
 }
+
+

@@ -5,7 +5,7 @@ import XCTest
 class CoordinatorTests: XCTestCase
 {
     func testCoordinatorInitialisedWithTasks() {
-        let coordinator = Coordinator(screen: .home)
+        let coordinator = Coordinator(screen: .tasks)
         XCTAssertTrue(coordinator.navigationController.topViewController is TasksViewController)
     }
     
