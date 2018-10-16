@@ -45,7 +45,7 @@ extension TaskCreateInteractor: Injectable
 func build() -> TaskCreateViewController {
     let interactor = TaskCreateInteractor()
     let controller = TaskCreateViewController()
-    interactor.output = { update in
+    interactor.output = { [unowned controller] update in
         os_log("view update: %@", "\(update)")
         controller.input(update)
     }

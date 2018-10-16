@@ -42,7 +42,7 @@ extension TaskListInteractor: Injectable
 func build() -> TaskListViewController {
     let interactor = TaskListInteractor()
     let controller = TaskListViewController()
-    interactor.output = { update in
+    interactor.output = { [unowned controller] update in
         controller.input(update)
     }
     controller.output = { event in
