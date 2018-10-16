@@ -101,4 +101,21 @@ class TeamworkClientTests: XCTestCase
         }
         wait(for: [projectsExpectation], timeout: 3)
     }
+    
+    func testMe(){
+        let meExpectation = expectation(description: "Retrieves all projects.")
+        client?.me(query: nil) { result in
+            switch result {
+            case .success(let response):
+                guard let status = response.status, status == "OK" else {
+                    XCTFail("Expected OK status. Got \(response.status as Any)")
+                    return
+                }
+                meExpectation.fulfill()
+            case .error(let e):
+                XCTFail("\(e)")
+            }
+        }
+        wait(for: [meExpectation], timeout: 3)
+    }
 }

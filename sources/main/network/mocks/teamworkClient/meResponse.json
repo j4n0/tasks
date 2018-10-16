@@ -1,0 +1,91 @@
+{
+    "STATUS" : "OK",
+    "person" : {
+        "phone-number-mobile" : "",
+        "profile" : "",
+        "id" : "230907",
+        "phone-number-fax" : "",
+        "user-invited-date" : "",
+        "phone-number-mobile-parts" : {
+            "phone" : "",
+            "prefix" : "",
+            "countryCode" : ""
+        },
+        "im-service" : "",
+        "has-feature-updates" : true,
+        "in-owner-company" : "1",
+        "user-invited" : "0",
+        "email-address" : "yat@triplespin.com",
+        "last-name" : "Cat",
+        "phone-number-home" : "",
+        "currentFeatureAnnouncement" : {
+            "isRead" : false,
+            "linkText" : "Watch this space!",
+            "id" : "2005",
+            "code" : "",
+            "title" : "UI Change",
+            "date" : "2018-10-16T12:51:00Z",
+            "link" : "",
+            "text" : "We've switched the positions of the Everything and Projects sections in the top navigation to better facilitate your workflow. This change, although small, will pave the way for some major feature improvements. Watch this space!",
+            "type" : "enhancement"
+        },
+        "private-notes" : "",
+        "notes" : "",
+        "title" : "",
+        "company-id" : "113332",
+        "companyId" : "113332",
+        "lengthOfDay" : "8.0",
+        "im-handle" : "",
+        "feature-updates-count" : "14",
+        "address" : {
+            "city" : "",
+            "country" : "China",
+            "line2" : "",
+            "zipcode" : "",
+            "line1" : "",
+            "countrycode" : "CN",
+            "state" : ""
+        },
+        "avatar-url" : "https:\/\/s3.amazonaws.com\/TWFiles\/349705\/userAvatar\/tf_C21F3016-CD19-C60F-E82B23120C506FEE.Tac_the_Psychotic_Cat.jpg",
+        "userUUID" : "",
+        "openId" : "",
+        "integrations" : {
+            "microsoftConnector" : {
+                "enabled" : false
+            }
+        },
+        "twoFactorAuthEnabled" : false,
+        "documentEditorInstalled" : false,
+        "administrator" : true,
+        "site-owner" : true,
+        "profile-text" : "",
+        "user-name" : "yat@triplespin.com",
+        "email-alt-1" : "",
+        "deleted" : false,
+        "permissions" : {
+            "can-add-projects" : true,
+            "can-manage-people" : true,
+            "can-access-templates" : true
+        },
+        "pid" : "",
+        "email-alt-2" : "",
+        "company-name" : "Cat",
+        "tags" : [
+            
+        ],
+        "has-desk-account" : true,
+        "user-type" : "account",
+        "email-alt-3" : "",
+        "phone-number-office-ext" : "",
+        "created-at" : "2016-08-18T12:31:31Z",
+        "first-name" : "Cat",
+        "marketoId" : "0",
+        "twitter" : "",
+        "last-changed-on" : "2018-03-24T18:48:46Z",
+        "user-invited-status" : "COMPLETE",
+        "has-access-to-new-projects" : true,
+        "phone-number-office" : "",
+        "last-login" : "2018-10-15T14:28:26Z",
+        "private-notes-text" : ""
+    }
+}

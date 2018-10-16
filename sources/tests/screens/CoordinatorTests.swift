@@ -6,7 +6,7 @@ class CoordinatorTests: XCTestCase
 {
     func testCoordinatorInitialisedWithTasks() {
         let coordinator = Coordinator(screen: .tasks)
-        XCTAssertTrue(coordinator.navigationController.topViewController is TasksViewController)
+        XCTAssertTrue(coordinator.navigationController.topViewController is TaskListViewController)
     }
     
     func testCoordinatorInitialisedWithLogin() {

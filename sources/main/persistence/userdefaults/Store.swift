@@ -1,11 +1,6 @@
 
 import Foundation
 
-public protocol StoreType: CustomDebugStringConvertible {
-    var authentication: Authentication? { get set }
-    func removeEverything()
-}
-
 public class Store<store: KeyValueStore>: NSObject, StoreType
 {
     private func read<T>(for key: String) -> T? {

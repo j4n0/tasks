@@ -19,13 +19,13 @@ public struct Tasklist: Codable
     public let name: String?
     public let description: String?
     public let position: Int?
-    public let projectID: String?
+    public let projectId: String?
     public let projectName: String?
     public let updatedAfter: Date?
     public let tasklistPrivate: Bool?
     public let isTemplate: Bool?
     public let tags: [String]?
-    public let milestoneID: String?
+    public let milestoneId: String?
     public let pinned: Bool?
     public let complete: Bool?
     public let uncompletedCount: Int?
@@ -36,13 +36,13 @@ public struct Tasklist: Codable
         case name
         case description
         case position
-        case projectID = "projectId"
+        case projectId = "projectId"
         case projectName
         case updatedAfter
         case tasklistPrivate = "private"
         case isTemplate
         case tags
-        case milestoneID = "milestone-id"
+        case milestoneId = "milestone-id"
         case pinned
         case complete
         case uncompletedCount = "uncompleted-count"

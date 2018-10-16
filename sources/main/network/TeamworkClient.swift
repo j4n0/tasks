@@ -1,5 +1,6 @@
 
 import Foundation
+import os
 
 public class TeamworkClient: ApiClient
 {
@@ -20,6 +21,7 @@ public class TeamworkClient: ApiClient
         let config = URLSessionConfiguration.default
         config.httpAdditionalHeaders = authorizationHeader
         config.httpAdditionalHeaders?["Accept"] = "application/json"
+        config.httpAdditionalHeaders?["Content-Type"] = "application/json;charset=UTF-8"
         return URLSession(configuration: config)
     }
     
@@ -43,6 +45,7 @@ public class TeamworkClient: ApiClient
     /// Quickly add multiple tasks
     /// https://developer.teamwork.com/projects/tasks/quickly-add-multiple-tasks
     func quickadd(projectId: String, tasks: QuickAddBody, completion: @escaping ApiResultCompletion<QuickAddResponse>) {
+        print("QuickAddBody:\n %@", tasks.dumpJSON().flatMap{ $0 } ?? "")
         let data = tasks.dumpJSON()?.data(using: .utf8)
         let resource = Resource(path: "/projects/\(projectId)/tasks/quickadd.json", method: .post, httpBody: data)
         fetch(resource: resource) { (result: ApiResult<QuickAddResponse>) in
@@ -50,11 +53,20 @@ public class TeamworkClient: ApiClient
         }
     }
     
-    /// Quickly add multiple tasks
-    /// https://developer.teamwork.com/projects/tasks/quickly-add-multiple-tasks
+    /// Retrieves all accessible projects. Default returns your active projects.
+    /// https://developer.teamwork.com/projects/projects/retrieve-all-projects
     func projects(query: ProjectsQuery? = nil, completion: @escaping ApiResultCompletion<ProjectsResponse>) {
         let resource = Resource(path: "/projects.json", query: query?.unwrappedQueryDictionary() ?? [:])
         fetch(resource: resource) { (result: ApiResult<ProjectsResponse>) in
+            self.complete(completion: completion, result: result)
+        }
+    }
+    
+    /// Response to GET /me.json - Get Current User Details
+    /// https://developer.teamwork.com/projects/people/get-current-user-details
+    func me(query: MeQuery? = nil, completion: @escaping ApiResultCompletion<MeResponse>) {
+        let resource = Resource(path: "/me.json", query: query?.unwrappedQueryDictionary() ?? [:])
+        fetch(resource: resource) { (result: ApiResult<MeResponse>) in
             self.complete(completion: completion, result: result)
         }
     }
@@ -64,6 +76,7 @@ public class TeamworkClient: ApiClient
         case .success(_):
             completion(result)
         case .error(let e):
+            os_log("%@", e.localizedDescription)
             completion(.error(e))
         }
     }

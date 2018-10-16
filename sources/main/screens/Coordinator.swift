@@ -6,6 +6,7 @@ public class Coordinator: UIResponder
     enum Screen {
         case login
         case tasks
+        case taskEdit
     }
     
     private(set) var navigationController: UINavigationController!
@@ -18,13 +19,23 @@ public class Coordinator: UIResponder
     }
     
     func show(screen: Screen){
-        navigationController.show(controller(screen: screen), sender: self)
+        DispatchQueue.main.async {
+            self.navigationController.show(self.controller(screen: screen), sender: self)
+        }
+    }
+    
+    func pop(){
+        DispatchQueue.main.async {
+            self.navigationController.popViewController(animated: true)
+        }
     }
     
     func alert(title: String, message: String, okAction: @escaping (UIAlertAction) -> Void){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: okAction))
-        navigationController.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.navigationController.present(alert, animated: true, completion: nil)
+        }
     }
     
     func controller(screen: Screen) -> UIViewController {
@@ -33,8 +44,9 @@ public class Coordinator: UIResponder
             let interactor = LoginInteractor(coordinator: self)
             return LoginViewController(url: LoginDetails.loginURL, navigationDelegate: interactor)
         case .tasks:
-            let interactor = TasksInteractor()
-            return TasksViewController(interactor: interactor)
+            return build() as TaskListViewController
+        case .taskEdit:
+            return build() as TaskCreateViewController
         }
     }
 }
