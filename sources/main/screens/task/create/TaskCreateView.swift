@@ -90,7 +90,7 @@ class TaskCreateView: UIView
             "V:|[separatorLine(1)]",
             "H:|[bottomStrip]|",
             "V:|-48-[taskTitleInputView][bottomStrip(48)]",
-            "H:|-10-[taskListLabel]-20-[saveButton]-10-|",
+            "H:|-10-[taskListLabel]-20-[saveButton(60)]-10-|",
             "V:[saveButton]-|"
             ].forEach {
                 addConstraints(NSLayoutConstraint.constraints(withVisualFormat: $0, options: [], metrics: nil, views: views))

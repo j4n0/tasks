@@ -12,13 +12,18 @@ class TaskCreateViewController: UIViewController, Interactable
     let taskCreateView = TaskCreateView()
     lazy var keyboard = KeyboardAvoidance(viewController: self)
     
+    /* Focusing this dummy field we resign from any active field and trigger updates without hiding the keyboard.
+       Otherwise when the user clicks save the keyboard goes down suddenly while popping, or the last field is not updated. */
+    let dummyTextField = UITextField().then { $0.isHidden = true }
+    
     override func loadView() {
         view = taskCreateView
+        view.addSubview(dummyTextField)
         taskCreateView.didClickClose = {
             self.output(.dismiss)
         }
         taskCreateView.didClickSave = { tasklist in
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            self.dummyTextField.becomeFirstResponder()
             DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100), execute: {
                 let text = self.titleEditViewController.titleEditController.rows.compactMap {
                     return $0.title.isEmpty ? nil : $0.title
