@@ -11,8 +11,10 @@ class TaskListViewController: UIViewController, Interactable
     lazy var flatCollectionVC = FlatCollectionVC(sections: [], showHeaders: true).then {
         $0.output = { event in
             switch event {
-            case .clickedRow(let indexPath, let rowModel): self.output(.clickedRow(indexPath: indexPath, model: rowModel))
-            case .viewIsReady: self.output(.viewIsReady)
+            case .clickedRow(let indexPath, let rowModel):
+                self.output(.clickedRow(indexPath: indexPath, model: rowModel))
+            case .viewIsReady: 
+                self.output(.viewIsReady)
             }
         }
     }
@@ -21,7 +23,7 @@ class TaskListViewController: UIViewController, Interactable
         super.viewDidLoad()
         layout()
     }
-
+    
     func layout(){
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(TaskListViewController.didClickPlus))
         navigationController?.navigationBar.isHidden = false

@@ -5,7 +5,7 @@ import UIKit
 class TaskCreateView: UIView
 {
     var didClickClose: ()->() = { os_log("You clicked close. Override this handler.") }
-    var didClickSave: (String, Tasklist)->() = { text, project in os_log("You clicked save. Override this handler.") }
+    var didClickSave: (Tasklist)->() = { tasklist in os_log("You clicked save. Override this handler.") }
  
     var tasklist: Tasklist? {
         willSet {
@@ -21,9 +21,8 @@ class TaskCreateView: UIView
         $0.tintColor = UIColor(hexString: "#3973fd")
     }
     
-    lazy var textField = UITextField().then {
-        $0.placeholder = "Task title"
-        $0.delegate = self
+    let taskTitleInputView = UIView().then {
+        $0.backgroundColor = UIColor.lightGray
     }
     
     let separatorLine = UIView().then {
@@ -45,7 +44,8 @@ class TaskCreateView: UIView
         $0.layer.cornerRadius = 16/2
         $0.layer.masksToBounds = true
         $0.clipsToBounds = true
-        TaskCreateView.setButtonIsEnabled(button: $0, isEnabled: false)
+        TaskCreateView.setButtonIsEnabled(button: $0, isEnabled: true)
+        print("🙄 pending save button enable/disable")
     }
     
     static func setButtonIsEnabled(button: UIButton, isEnabled: Bool){
@@ -54,11 +54,7 @@ class TaskCreateView: UIView
     }
     
     @objc func didSave(){
-        guard let text = textField.text, let tasklist = tasklist else {
-            os_log("Clicked save but data was not ready.")
-            return
-        }
-        didClickSave(text, tasklist)
+        tasklist.flatMap { didClickSave($0) }
     }
     
     @objc func didClose(){
@@ -78,7 +74,7 @@ class TaskCreateView: UIView
     {
         backgroundColor = UIColor(hexString: "#fffeff")
         addSubview(closeButton)
-        addSubview(textField)
+        addSubview(taskTitleInputView)
         addSubview(bottomStrip)
         bottomStrip.addSubview(separatorLine)
         bottomStrip.addSubview(taskListLabel)
@@ -90,28 +86,18 @@ class TaskCreateView: UIView
         [
             "H:[closeButton(16)]-10-|",
             "V:|-10-[closeButton(16)]",
-            "V:|-48-[textField(64)]",
-            "H:|-[textField]-|",
+            "V:|-48-[taskTitleInputView(300)]",
+            "H:|-[taskTitleInputView]-|",
             "H:|[separatorLine]|",
             "V:|[separatorLine(1)]",
             "H:|[bottomStrip]|",
             "V:[bottomStrip(48)]",
             "H:|-10-[taskListLabel]-20-[saveButton]-10-|",
-            "V:[taskListLabel]-|",
             "V:[saveButton]-|"
             ].forEach {
                 addConstraints(NSLayoutConstraint.constraints(withVisualFormat: $0, options: [], metrics: nil, views: views))
         }
         NSLayoutConstraint.activate([bottomStrip.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)])
-    }
-}
-
-extension TaskCreateView: UITextFieldDelegate {
-    
-    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let resultingText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? string
-        let isValidText = resultingText.count > 0
-        TaskCreateView.setButtonIsEnabled(button: saveButton, isEnabled: isValidText)
-        return true
+        taskListLabel.centerVerticallyInParent()
     }
 }

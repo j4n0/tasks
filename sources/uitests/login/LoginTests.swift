@@ -12,8 +12,9 @@ class LoginTests: XCTestCase
     override func setUp(){
         continueAfterFailure = false
         app = XCUIApplication()
-        app.launchArguments.append("StartFromCleanSlate")
-        app.launchArguments.append("RemoveAuthenticationOnTerminate")
+        // I’m passing the bundle id as launch argument to prepare for ui tests by removing persistence.
+        let uiTests = "es.com.jano.tasks.tasksUITests"
+        app.launchArguments.append(uiTests)
         app.launch()
     }
     

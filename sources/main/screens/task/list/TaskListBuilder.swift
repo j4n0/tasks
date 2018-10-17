@@ -21,7 +21,8 @@ extension TaskListViewController: Injectable
     func input(_ input: TaskListViewUpdate) {
         DispatchQueue.main.async {
             switch input {
-            case .load(let sections): self.flatCollectionVC.input(.load(sections: sections))
+            case .load(let sections):
+                self.flatCollectionVC.input(.load(sections: sections))
             }
         }
     }
@@ -32,9 +33,13 @@ extension TaskListInteractor: Injectable
     typealias Input = TaskListViewEvent
     func input(_ input: Input){
         switch input {
-        case .clickedPlus: environment.coordinator.show(screen: .taskEdit)
-        case .clickedRow(let indexPath, let model): os_log("%@", "\(indexPath) \(model)")
-        case .viewIsReady: downloadTasks()
+        case .clickedPlus:
+            environment.coordinator.show(screen: .taskCreate)
+        case .clickedRow(let indexPath, _):
+            let todoItem = projectItems[indexPath.section].items[indexPath.row]
+            environment.coordinator.show(screen: .taskDetail(todoItem))
+        case .viewIsReady:
+            downloadTasks()
         }
     }
 }
@@ -47,6 +52,9 @@ func build() -> TaskListViewController {
     }
     controller.output = { event in
         interactor.input(event)
+    }
+    controller.flatCollectionVC.previewDelegate = PreviewDelegate{ indexPath in
+        return interactor.controllerForIndexPath(indexPath: indexPath)
     }
     return controller
 }

@@ -34,7 +34,7 @@ class LoginInteractor: NSObject
                 environment.store.authentication = Authentication(company: company, accessToken: accessToken )
                 DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(2), execute: {
                     // let the user read the Login Successful message.
-                    self.coordinator.show(screen: .tasks)
+                    self.coordinator.show(screen: .taskList)
                 })
             case .error(let e):
                 os_log(.debug, log: OSLog.default, "Downloading all tasks: ", e.localizedDescription)

@@ -28,7 +28,7 @@ public class AppEnvironment: Environment
                 os_log("Found an authentication in the store.")
             }
         }
-        self.coordinator = Coordinator(screen: auth == nil ? .login : .tasks)
+        self.coordinator = Coordinator(screen: auth == nil ? .login : .taskList)
         self.teamworkClient = TeamworkClient(authentication: auth)
         observeAccessToken()
     }

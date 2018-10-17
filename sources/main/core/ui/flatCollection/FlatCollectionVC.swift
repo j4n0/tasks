@@ -30,6 +30,8 @@ class FlatCollectionVC: UIViewController, Interactable
     // Interactable
     var output: ((FlatCollectionEvent) -> Void) = { event in os_log("Got event %@ but override is missing.", "\(event)") }
     
+    var previewDelegate: PreviewDelegate?
+    
     private lazy var collectionView: UICollectionView = {
         let layout = CollectionViewLayout(display: .list)
         layout.headerReferenceSize = showHeaders ? CGSize(width: 0, height: 44) : CGSize.zero 
@@ -66,6 +68,13 @@ class FlatCollectionVC: UIViewController, Interactable
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
+        registerPeekAndPop()
+    }
+    
+    func registerPeekAndPop(){
+        if UIApplication.shared.keyWindow?.traitCollection.forceTouchCapability == UIForceTouchCapability.available, previewDelegate != nil {
+            registerForPreviewing(with: self, sourceView: view)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -89,4 +98,30 @@ extension FlatCollectionVC: UICollectionViewDelegate
             }
         }
     }
+}
+
+extension FlatCollectionVC: UIViewControllerPreviewingDelegate
+{
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = collectionView.indexPathForItem(at:location) else { return nil }
+        guard let cell = collectionView.cellForItem(at: indexPath) else { return nil }
+        guard let controller = previewDelegate?.controllerForIndexPath(indexPath) else {
+            return nil
+        }
+        controller.preferredContentSize = CGSize(width: 0.0, height: 500)
+        previewingContext.sourceRect = cell.frame
+        return controller
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        show(viewControllerToCommit, sender: self)
+    }
+}
+
+class PreviewDelegate: UIResponder
+{
+    init(controllerForIndexPath: @escaping (IndexPath) -> UIViewController) {
+        self.controllerForIndexPath = controllerForIndexPath
+    }
+    var controllerForIndexPath: (IndexPath) -> UIViewController
 }

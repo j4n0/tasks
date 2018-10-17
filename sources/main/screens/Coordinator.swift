@@ -5,8 +5,9 @@ public class Coordinator: UIResponder
 {
     enum Screen {
         case login
-        case tasks
-        case taskEdit
+        case taskList
+        case taskCreate
+        case taskDetail(TodoItem)
     }
     
     private(set) var navigationController: UINavigationController!
@@ -16,6 +17,12 @@ public class Coordinator: UIResponder
         self.navigationController = UINavigationController(rootViewController: controller(screen: screen))
         navigationController.navigationBar.isTranslucent = false
         navigationController.navigationBar.isHidden = true
+    }
+    
+    func show(screens: [Screen]){
+        DispatchQueue.main.async {
+            self.navigationController.viewControllers = screens.map { self.controller(screen: $0) }
+        }
     }
     
     func show(screen: Screen){
@@ -43,10 +50,12 @@ public class Coordinator: UIResponder
         case .login:
             let interactor = LoginInteractor(coordinator: self)
             return LoginViewController(url: LoginDetails.loginURL, navigationDelegate: interactor)
-        case .tasks:
+        case .taskList:
             return build() as TaskListViewController
-        case .taskEdit:
+        case .taskCreate:
             return build() as TaskCreateViewController
+        case .taskDetail(let todoItem):
+            return TaskDetailViewController(todoItem: todoItem)
         }
     }
 }

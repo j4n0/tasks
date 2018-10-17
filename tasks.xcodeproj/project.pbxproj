@@ -33,7 +33,7 @@
 		3A057BC721739C1C00005625 /* RowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BBA21739C1C00005625 /* RowModel.swift */; };
 		3A057BCA21739C1C00005625 /* CollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BBE21739C1C00005625 /* CollectionViewLayout.swift */; };
 		3A057BCC21739C7E00005625 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BCB21739C7E00005625 /* Then.swift */; };
-		3A057BCE21739EFE00005625 /* Array+initWithTodoItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BCD21739EFE00005625 /* Array+initWithTodoItems.swift */; };
+		3A057BCE21739EFE00005625 /* Array+ProjectItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BCD21739EFE00005625 /* Array+ProjectItems.swift */; };
 		3A057BD22173A3B200005625 /* TaskListsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BD12173A3B200005625 /* TaskListsResponse.swift */; };
 		3A057BD42173A48A00005625 /* TaskListsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BD32173A48A00005625 /* TaskListsQuery.swift */; };
 		3A057BD62173A5C500005625 /* RandomValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A057BD52173A5C500005625 /* RandomValues.swift */; };
@@ -76,6 +76,17 @@
 		3A0AF9E6217675C9002552FD /* meResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A0AF9E5217675C9002552FD /* meResponse.json */; };
 		3A0AF9EA2176760A002552FD /* meResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A0AF9E82176760A002552FD /* meResponse.json */; };
 		3A0AF9EB2176760A002552FD /* MeResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0AF9E92176760A002552FD /* MeResponseTests.swift */; };
+		3A1AEEBE21773324001CD362 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A1AEEBD21773324001CD362 /* InfoPlist.strings */; };
+		3A1AEEC121773CD0001CD362 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AEEC021773CD0001CD362 /* TaskDetailViewController.swift */; };
+		3A1AEEC321773EE5001CD362 /* Reflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AEEC221773EE5001CD362 /* Reflection.swift */; };
+		3A1AEEC621773FC1001CD362 /* ReflectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AEEC521773FC1001CD362 /* ReflectionTests.swift */; };
+		3A1AEEC9217756CA001CD362 /* Array+SectionsOfRowModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AEEC7217756C3001CD362 /* Array+SectionsOfRowModels.swift */; };
+		3A1AEF8A21779767001CD362 /* TaskTitlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AEF8521779767001CD362 /* TaskTitlesViewController.swift */; };
+		3A1AEF8B21779767001CD362 /* InputRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AEF8721779767001CD362 /* InputRowCell.swift */; };
+		3A1AEF8C21779767001CD362 /* InputRowCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AEF8821779767001CD362 /* InputRowCellView.swift */; };
+		3A1AEF8D21779767001CD362 /* InputRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AEF8921779767001CD362 /* InputRowModel.swift */; };
+		3A1AEF8F2177978D001CD362 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AEF8E2177978D001CD362 /* TableCell.swift */; };
+		3A1AEF91217797A8001CD362 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AEF90217797A8001CD362 /* TableDataSource.swift */; };
 		3A304E7D2175325300C06D0A /* TaskCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A304E7C2175325300C06D0A /* TaskCreateViewController.swift */; };
 		3A304E7F2175356300C06D0A /* TaskCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A304E7E2175356300C06D0A /* TaskCreateView.swift */; };
 		3A304E81217535F200C06D0A /* OptionalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A304E80217535F200C06D0A /* OptionalProtocol.swift */; };
@@ -174,7 +185,7 @@
 		3A057BBA21739C1C00005625 /* RowModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowModel.swift; sourceTree = "<group>"; };
 		3A057BBE21739C1C00005625 /* CollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewLayout.swift; sourceTree = "<group>"; };
 		3A057BCB21739C7E00005625 /* Then.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
-		3A057BCD21739EFE00005625 /* Array+initWithTodoItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+initWithTodoItems.swift"; sourceTree = "<group>"; };
+		3A057BCD21739EFE00005625 /* Array+ProjectItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+ProjectItems.swift"; sourceTree = "<group>"; };
 		3A057BD12173A3B200005625 /* TaskListsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListsResponse.swift; sourceTree = "<group>"; };
 		3A057BD32173A48A00005625 /* TaskListsQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListsQuery.swift; sourceTree = "<group>"; };
 		3A057BD52173A5C500005625 /* RandomValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomValues.swift; sourceTree = "<group>"; };
@@ -217,6 +228,17 @@
 		3A0AF9E5217675C9002552FD /* meResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = meResponse.json; sourceTree = "<group>"; };
 		3A0AF9E82176760A002552FD /* meResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = meResponse.json; sourceTree = "<group>"; };
 		3A0AF9E92176760A002552FD /* MeResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeResponseTests.swift; sourceTree = "<group>"; };
+		3A1AEEBD21773324001CD362 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		3A1AEEC021773CD0001CD362 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		3A1AEEC221773EE5001CD362 /* Reflection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reflection.swift; sourceTree = "<group>"; };
+		3A1AEEC521773FC1001CD362 /* ReflectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReflectionTests.swift; sourceTree = "<group>"; };
+		3A1AEEC7217756C3001CD362 /* Array+SectionsOfRowModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SectionsOfRowModels.swift"; sourceTree = "<group>"; };
+		3A1AEF8521779767001CD362 /* TaskTitlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTitlesViewController.swift; sourceTree = "<group>"; };
+		3A1AEF8721779767001CD362 /* InputRowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputRowCell.swift; sourceTree = "<group>"; };
+		3A1AEF8821779767001CD362 /* InputRowCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputRowCellView.swift; sourceTree = "<group>"; };
+		3A1AEF8921779767001CD362 /* InputRowModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputRowModel.swift; sourceTree = "<group>"; };
+		3A1AEF8E2177978D001CD362 /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
+		3A1AEF90217797A8001CD362 /* TableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
 		3A304E7C2175325300C06D0A /* TaskCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCreateViewController.swift; sourceTree = "<group>"; };
 		3A304E7E2175356300C06D0A /* TaskCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCreateView.swift; sourceTree = "<group>"; };
 		3A304E80217535F200C06D0A /* OptionalProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalProtocol.swift; sourceTree = "<group>"; };
@@ -356,6 +378,7 @@
 		3A057BB121739C1C00005625 /* cellType */ = {
 			isa = PBXGroup;
 			children = (
+				3A1AEF8E2177978D001CD362 /* TableCell.swift */,
 				3A057BB221739C1C00005625 /* CellType.swift */,
 				3A057BB321739C1C00005625 /* Cell.swift */,
 				3A057BB421739C1C00005625 /* CellViewType.swift */,
@@ -441,6 +464,7 @@
 				3AD6F4482172A60A003379D4 /* Encodable+dumpJSON.swift */,
 				3A304E80217535F200C06D0A /* OptionalProtocol.swift */,
 				3A0AF9DE217669D5002552FD /* String+splitByStrings.swift */,
+				3A1AEEC221773EE5001CD362 /* Reflection.swift */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -451,6 +475,7 @@
 				3A0AF9BB217605A2002552FD /* cells */,
 				3A0AF9B3217603AE002552FD /* flatCollection */,
 				3A0AF9D421760E19002552FD /* KeyboardAvoidance.swift */,
+				3A1AEF90217797A8001CD362 /* TableDataSource.swift */,
 				3A304E822175360100C06D0A /* UIView+enumerateSubviews.swift */,
 				3A304E84217541D200C06D0A /* UIColor+String.swift */,
 				3A0AF9CD217609AE002552FD /* UIView+layout.swift */,
@@ -585,9 +610,45 @@
 			path = me;
 			sourceTree = "<group>";
 		};
+		3A1AEEBF21773CC5001CD362 /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				3A1AEEC021773CD0001CD362 /* TaskDetailViewController.swift */,
+			);
+			path = detail;
+			sourceTree = "<group>";
+		};
+		3A1AEEC421773F85001CD362 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				3A1AEEC521773FC1001CD362 /* ReflectionTests.swift */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		3A1AEF8421779767001CD362 /* taskTitles */ = {
+			isa = PBXGroup;
+			children = (
+				3A1AEF8621779767001CD362 /* row */,
+				3A1AEF8521779767001CD362 /* TaskTitlesViewController.swift */,
+			);
+			path = taskTitles;
+			sourceTree = "<group>";
+		};
+		3A1AEF8621779767001CD362 /* row */ = {
+			isa = PBXGroup;
+			children = (
+				3A1AEF8721779767001CD362 /* InputRowCell.swift */,
+				3A1AEF8821779767001CD362 /* InputRowCellView.swift */,
+				3A1AEF8921779767001CD362 /* InputRowModel.swift */,
+			);
+			path = row;
+			sourceTree = "<group>";
+		};
 		3A304E7A2175317A00C06D0A /* create */ = {
 			isa = PBXGroup;
 			children = (
+				3A1AEF8421779767001CD362 /* taskTitles */,
 				3A304E7E2175356300C06D0A /* TaskCreateView.swift */,
 				3A304E7C2175325300C06D0A /* TaskCreateViewController.swift */,
 				3A0AF9D621761843002552FD /* TaskCreateInteractor.swift */,
@@ -599,6 +660,7 @@
 		3A304E7B2175319A00C06D0A /* task */ = {
 			isa = PBXGroup;
 			children = (
+				3A1AEEBF21773CC5001CD362 /* detail */,
 				3A304E7A2175317A00C06D0A /* create */,
 				3AEA1A20217289730040F347 /* list */,
 			);
@@ -800,6 +862,7 @@
 		3AEA197A217226700040F347 /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				3A1AEEC421773F85001CD362 /* core */,
 				3AD6F4402172A563003379D4 /* network */,
 				3AD6F41121728FD0003379D4 /* persistence */,
 				3AD6F40D21728F0D003379D4 /* screens */,
@@ -847,6 +910,7 @@
 		3AEA197F217226950040F347 /* main */ = {
 			isa = PBXGroup;
 			children = (
+				3A1AEEBD21773324001CD362 /* InfoPlist.strings */,
 				3AEA19562172265C0040F347 /* Info.plist */,
 			);
 			path = main;
@@ -903,9 +967,10 @@
 			isa = PBXGroup;
 			children = (
 				3AEA1A242172898E0040F347 /* TaskListViewController.swift */,
-				3A057BCD21739EFE00005625 /* Array+initWithTodoItems.swift */,
-				3A0AF9DA21763948002552FD /* TaskListBuilder.swift */,
 				3A0AF9DC217639BB002552FD /* TaskListInteractor.swift */,
+				3A0AF9DA21763948002552FD /* TaskListBuilder.swift */,
+				3A057BCD21739EFE00005625 /* Array+ProjectItems.swift */,
+				3A1AEEC7217756C3001CD362 /* Array+SectionsOfRowModels.swift */,
 			);
 			path = list;
 			sourceTree = "<group>";
@@ -1032,6 +1097,7 @@
 				3AEA19522172265C0040F347 /* Assets.xcassets in Resources */,
 				3AD6F42A2172A296003379D4 /* token.json in Resources */,
 				3A057B9D2173793700005625 /* allTasksResponse.json in Resources */,
+				3A1AEEBE21773324001CD362 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1073,14 +1139,17 @@
 				3AD6F4302172A2DE003379D4 /* URLSessionProtocol.swift in Sources */,
 				3AD6F40421728CDA003379D4 /* KeyValueStore.swift in Sources */,
 				3A057BC721739C1C00005625 /* RowModel.swift in Sources */,
+				3A1AEF8A21779767001CD362 /* TaskTitlesViewController.swift in Sources */,
 				3A057BEC2173D04400005625 /* QuickAddResponse.swift in Sources */,
 				3AD6F44D2172A90B003379D4 /* Resource.swift in Sources */,
 				3A0AF9D521760E19002552FD /* KeyboardAvoidance.swift in Sources */,
 				3AEA1A222172897A0040F347 /* LoginViewController.swift in Sources */,
 				3A0AF9DB21763948002552FD /* TaskListBuilder.swift in Sources */,
+				3A1AEF8D21779767001CD362 /* InputRowModel.swift in Sources */,
 				3A057BAA2173796E00005625 /* AllTasksResponse.swift in Sources */,
 				3A057BC521739C1C00005625 /* RowCellView.swift in Sources */,
 				3AD6F40A21728D63003379D4 /* AuthenticatingClient.swift in Sources */,
+				3A1AEF8F2177978D001CD362 /* TableCell.swift in Sources */,
 				3A0AF9DD217639BB002552FD /* TaskListInteractor.swift in Sources */,
 				3A304E85217541D200C06D0A /* UIColor+String.swift in Sources */,
 				3A0AF9CE217609AF002552FD /* UIView+layout.swift in Sources */,
@@ -1101,8 +1170,10 @@
 				3A057B852173591200005625 /* URLRequest+Resource.swift in Sources */,
 				3AEA194B2172265B0040F347 /* AppDelegate.swift in Sources */,
 				3AEA1A172172887B0040F347 /* PlistConfiguration.swift in Sources */,
+				3A1AEEC121773CD0001CD362 /* TaskDetailViewController.swift in Sources */,
 				3AD6F40321728CDA003379D4 /* Store.swift in Sources */,
 				3A057BF52173D45800005625 /* ProjectsResponse.swift in Sources */,
+				3A1AEEC9217756CA001CD362 /* Array+SectionsOfRowModels.swift in Sources */,
 				3A057B8F2173777400005625 /* QueryDictionaryConvertible.swift in Sources */,
 				3A057BC221739C1C00005625 /* CellViewType.swift in Sources */,
 				3A0AF9B7217603AE002552FD /* CollectionDataSource.swift in Sources */,
@@ -1119,6 +1190,7 @@
 				3A057BC121739C1C00005625 /* Cell.swift in Sources */,
 				3AEA1A10217288250040F347 /* AppEnvironment.swift in Sources */,
 				3A0AF9C821760712002552FD /* Interactable.swift in Sources */,
+				3A1AEF8B21779767001CD362 /* InputRowCell.swift in Sources */,
 				3A057BCC21739C7E00005625 /* Then.swift in Sources */,
 				3A0AF9BF2176065B002552FD /* StoreType.swift in Sources */,
 				3A0AF9C921760712002552FD /* Injectable.swift in Sources */,
@@ -1128,8 +1200,9 @@
 				3A057BAC2173796E00005625 /* GetAllTasksQuery.swift in Sources */,
 				3AD6F40521728CDA003379D4 /* Authentication.swift in Sources */,
 				3A304E81217535F200C06D0A /* OptionalProtocol.swift in Sources */,
+				3A1AEF91217797A8001CD362 /* TableDataSource.swift in Sources */,
 				3A0AF9D721761843002552FD /* TaskCreateInteractor.swift in Sources */,
-				3A057BCE21739EFE00005625 /* Array+initWithTodoItems.swift in Sources */,
+				3A057BCE21739EFE00005625 /* Array+ProjectItems.swift in Sources */,
 				3A0AF9C221760683002552FD /* Plist.swift in Sources */,
 				3A057BAB2173796E00005625 /* TasksSubQuery.swift in Sources */,
 				3A304E7F2175356300C06D0A /* TaskCreateView.swift in Sources */,
@@ -1138,10 +1211,12 @@
 				3A0AF9CA21760712002552FD /* Instantiatable.swift in Sources */,
 				3AD6F42D2172A2B1003379D4 /* MockedTeamworkClient.swift in Sources */,
 				3AD6F42B2172A296003379D4 /* MockedAuthenticatingClient.swift in Sources */,
+				3A1AEEC321773EE5001CD362 /* Reflection.swift in Sources */,
 				3AD6F43A2172A4D6003379D4 /* AccessTokenResponse.swift in Sources */,
 				3A057B8E2173777400005625 /* CustomDate.swift in Sources */,
 				3A304E832175360100C06D0A /* UIView+enumerateSubviews.swift in Sources */,
 				3AD6F4312172A2DE003379D4 /* URLSessionDataTaskProtocol.swift in Sources */,
+				3A1AEF8C21779767001CD362 /* InputRowCellView.swift in Sources */,
 				3AD6F40C21728D80003379D4 /* ApiClient.swift in Sources */,
 				3A057BCA21739C1C00005625 /* CollectionViewLayout.swift in Sources */,
 				3A057BA82173796E00005625 /* Predecessor.swift in Sources */,
@@ -1162,6 +1237,7 @@
 				3A057BE82173BAC100005625 /* QuickAddBodyTests.swift in Sources */,
 				3A0AF9EB2176760A002552FD /* MeResponseTests.swift in Sources */,
 				3AEA1A2921728A600040F347 /* PlistConfigurationTests.swift in Sources */,
+				3A1AEEC621773FC1001CD362 /* ReflectionTests.swift in Sources */,
 				3AD6F41521728FD0003379D4 /* AuthenticationTests.swift in Sources */,
 				3AD6F4442172A583003379D4 /* TokenResponseTests.swift in Sources */,
 				3A057BD92173A7D200005625 /* TaskListsQueryTests.swift in Sources */,
@@ -1333,14 +1409,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RPRLABY6AE;
+				DEVELOPMENT_TEAM = DK34MVSU63;
 				INFOPLIST_FILE = "$(SRCROOT)/targets/main/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = es.com.jano.tasks.tasks;
+				PRODUCT_BUNDLE_IDENTIFIER = com.poq.quickactionstest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1351,14 +1428,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RPRLABY6AE;
+				DEVELOPMENT_TEAM = DK34MVSU63;
 				INFOPLIST_FILE = "$(SRCROOT)/targets/main/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = es.com.jano.tasks.tasks;
+				PRODUCT_BUNDLE_IDENTIFIER = com.poq.quickactionstest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1370,14 +1448,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RPRLABY6AE;
+				DEVELOPMENT_TEAM = DK34MVSU63;
 				INFOPLIST_FILE = "$(SRCROOT)/targets/tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = es.com.jano.tasks.tasksTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.poq.quickactionstest.tasksTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1391,14 +1469,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RPRLABY6AE;
+				DEVELOPMENT_TEAM = DK34MVSU63;
 				INFOPLIST_FILE = "$(SRCROOT)/targets/tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = es.com.jano.tasks.tasksTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.poq.quickactionstest.tasksTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1411,14 +1489,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RPRLABY6AE;
+				DEVELOPMENT_TEAM = DK34MVSU63;
 				INFOPLIST_FILE = "$(SRCROOT)/targets/uitests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = es.com.jano.tasks.tasksUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.poq.quickactionstest.tasksUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1431,14 +1509,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RPRLABY6AE;
+				DEVELOPMENT_TEAM = DK34MVSU63;
 				INFOPLIST_FILE = "$(SRCROOT)/targets/uitests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = es.com.jano.tasks.tasksUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.poq.quickactionstest.tasksUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
