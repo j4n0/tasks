@@ -86,12 +86,11 @@ class TaskCreateView: UIView
         [
             "H:[closeButton(16)]-10-|",
             "V:|-10-[closeButton(16)]",
-            "V:|-48-[taskTitleInputView(300)]",
             "H:|-[taskTitleInputView]-|",
             "H:|[separatorLine]|",
             "V:|[separatorLine(1)]",
             "H:|[bottomStrip]|",
-            "V:[bottomStrip(48)]",
+            "V:|-48-[taskTitleInputView][bottomStrip(48)]",
             "H:|-10-[taskListLabel]-20-[saveButton]-10-|",
             "V:[saveButton]-|"
             ].forEach {

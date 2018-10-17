@@ -25,10 +25,11 @@ class TaskListViewController: UIViewController, Interactable
     }
     
     func layout(){
+        view.backgroundColor = .white
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(TaskListViewController.didClickPlus))
         navigationController?.navigationBar.isHidden = false
         add(childController: flatCollectionVC)
-        flatCollectionVC.view.pinEdgesToSuperview()
+        flatCollectionVC.view.pinEdgesToSafeAreas()
     }
     
     @objc func didClickPlus(){

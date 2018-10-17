@@ -32,9 +32,10 @@ class TaskDetailViewController: UIViewController
     }
     
     func layout(){
+        view.backgroundColor = .white
         navigationController?.navigationBar.isHidden = false
         add(childController: flatCollectionVC)
-        flatCollectionVC.view.pinEdgesToSuperview()
+        flatCollectionVC.view.pinEdgesToSafeAreas()
     }
 }
 

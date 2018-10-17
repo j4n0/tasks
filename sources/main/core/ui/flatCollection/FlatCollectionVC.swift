@@ -4,7 +4,6 @@ import UIKit
 
 enum FlatCollectionEvent {
     case clickedRow(indexPath: IndexPath, model: RowModel)
-    //case deselected()
     case viewIsReady
 }
 
@@ -34,7 +33,7 @@ class FlatCollectionVC: UIViewController, Interactable
     
     private lazy var collectionView: UICollectionView = {
         let layout = CollectionViewLayout(display: .list)
-        layout.headerReferenceSize = showHeaders ? CGSize(width: 0, height: 44) : CGSize.zero 
+        layout.headerReferenceSize = showHeaders ? CGSize(width: 0, height: 54) : CGSize.zero 
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collectionView.register(RowCell.self, forCellWithReuseIdentifier: RowCell.identifier())
         collectionView.register(HeaderCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCell.identifier())

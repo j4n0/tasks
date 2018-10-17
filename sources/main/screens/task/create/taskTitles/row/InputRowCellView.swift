@@ -12,6 +12,8 @@ final class InputRowCellView: UIView
         $0.backgroundColor = UIColor(hexString: "#e0e3e6")
     }
     
+    var uuid: String?
+    
     init() {
         super.init(frame: CGRect.zero)
         initialize()
@@ -35,7 +37,7 @@ final class InputRowCellView: UIView
         for constraint in [
             "H:|-20-[textField]-20-|",
             "H:|-20-[separator]-20-|",
-            "V:|[textField][separator(1)]|"
+            "V:|[textField(40)][separator(1)]|"
             ] {
                 addConstraints(NSLayoutConstraint.constraints(withVisualFormat: constraint, options: [], metrics: nil, views: views))
         }
@@ -48,26 +50,31 @@ extension InputRowCellView: CellViewType
     
     func configure(cellModel: T) {
         textField.text = cellModel.title
-        textField.tag = cellModel.rowNumber
+        self.uuid = cellModel.uuid
     }
 }
 
 extension InputRowCellView: UITextFieldDelegate
 {
-    public func textFieldDidBeginEditing(_ textField: UITextField) {
-        let inputRow = InputRowModel(title: textField.text ?? "", rowNumber: textField.tag)
-        NotificationCenter.default.post(name: Notification.Name.taskTitleBeganEditing, object: inputRow)
-    }
     public func textFieldDidEndEditing(_ textField: UITextField) {
-        let inputRow = InputRowModel(title: textField.text ?? "", rowNumber: textField.tag)
+        guard let uuid = self.uuid else { return }
+        let inputRow = InputRowModel(title: textField.text ?? "", uuid: uuid)
         NotificationCenter.default.post(name: Notification.Name.taskTitleEndEditing, object: inputRow)
+    }
+    
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let newText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? string
+        guard let uuid = self.uuid else { return true }
+        let inputRow = InputRowModel(title: newText, uuid: uuid)
+        NotificationCenter.default.post(name: Notification.Name.taskTitleChanged, object: inputRow)
+        return true
     }
 }
 
 extension Notification.Name
 {
-    static var taskTitleBeganEditing: Notification.Name {
-        return .init(rawValue: "InputRowCellView.taskTitleBeginEditing")
+    static var taskTitleChanged: Notification.Name {
+        return .init(rawValue: "InputRowCellView.taskTitleChanged")
     }
     static var taskTitleEndEditing: Notification.Name {
         return .init(rawValue: "InputRowCellView.taskTitleEndEditing")

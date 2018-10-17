@@ -4,7 +4,7 @@ import UIKit
 final class HeaderCellView: UIView
 {
     private let label = UILabel().then {
-        $0.font = UIFont(name: "HelveticaNeue-Medium", size: UIFont.preferredFont(forTextStyle: .headline).pointSize)
+        $0.font = UIFont(name: "HelveticaNeue-Medium", size: UIFont.preferredFont(forTextStyle: .title1).pointSize)
         $0.adjustsFontForContentSizeCategory = true
     }
     
