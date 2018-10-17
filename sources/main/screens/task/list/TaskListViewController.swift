@@ -26,6 +26,7 @@ class TaskListViewController: UIViewController, Interactable
     
     func layout(){
         view.backgroundColor = .white
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: UIBarButtonItem.Style.plain, target: self, action: #selector(TaskListViewController.logout))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(TaskListViewController.didClickPlus))
         navigationController?.navigationBar.isHidden = false
         add(childController: flatCollectionVC)
@@ -34,5 +35,9 @@ class TaskListViewController: UIViewController, Interactable
     
     @objc func didClickPlus(){
         self.output(.clickedPlus)
+    }
+    
+    @objc func logout(){
+        self.output(.clickedLogout)
     }
 }

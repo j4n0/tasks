@@ -2,11 +2,17 @@
 import Foundation
 import os
 
-enum TaskListViewEvent {
+enum TaskListViewEvent
+{
     // user wants to add another task
     case clickedPlus
+    
     // user clicked a task
     case clickedRow(indexPath: IndexPath, model: RowModel)
+    
+    // user requested logout
+    case clickedLogout
+    
     // the view is ready to receive data
     case viewIsReady
 }
@@ -38,6 +44,8 @@ extension TaskListInteractor: Injectable
         case .clickedRow(let indexPath, _):
             let todoItem = projectItems[indexPath.section].items[indexPath.row]
             environment.coordinator.show(screen: .taskDetail(todoItem))
+        case .clickedLogout:
+            environment.coordinator.show(screens: [.login])
         case .viewIsReady:
             downloadTasks()
         }

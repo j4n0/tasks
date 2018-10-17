@@ -1,17 +1,19 @@
 
 import UIKit
 
-class TitleEditController
+class TitleEditController: NSObject
 {
     var rows: [InputRowModel]
     weak var tableDataSource: TableDataSource<InputRowCell>?
     weak var tableView: UITableView?
+    @objc dynamic var isValidData: Bool = false
     
     init(rows: [InputRowModel], tableDataSource: TableDataSource<InputRowCell>, tableView: UITableView){
         self.rows = rows
         self.tableDataSource = tableDataSource
         self.tableView = tableView
         self.tableDataSource?.sections = [Section<InputRowModel>(title: "Task titles", rows: rows)]
+        super.init()
         observeTaskEdition()
     }
     
@@ -38,11 +40,15 @@ class TitleEditController
     
     func titleChanged(rowModel: InputRowModel){
         // if we are editing the last blank row, we add one more to indicate it’s possible to keep adding
-        guard let index = indexOf(uuid: rowModel.uuid), !rowModel.title.isEmpty else { return }
+        guard let index = indexOf(uuid: rowModel.uuid), !rowModel.title.isEmpty else {
+            updateIsValidData()
+            return
+        }
         let isLastRow = rows.count == index + 1
         if isLastRow {
             insert(row: rowModel)
         }
+        isValidData = true
     }
     
     func endEditing(rowModel: InputRowModel){
@@ -55,6 +61,13 @@ class TitleEditController
         if !isLastRow && isEmpty {
             remove(row: rowModel)
         }
+        // validate data
+        updateIsValidData()
+    }
+    
+    func updateIsValidData(){
+        isValidData = rows.firstIndex { !$0.title.isEmpty } != nil
+        print(isValidData)
     }
     
     func insert(row: InputRowModel){

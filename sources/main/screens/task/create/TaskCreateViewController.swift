@@ -18,13 +18,18 @@ class TaskCreateViewController: UIViewController, Interactable
             self.output(.dismiss)
         }
         taskCreateView.didClickSave = { tasklist in
-            let text = self.titleEditViewController.titleEditController.rows.compactMap {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100), execute: {
+                let text = self.titleEditViewController.titleEditController.rows.compactMap {
                     return $0.title.isEmpty ? nil : $0.title
-                }.joined(separator: "\n")
-            if !text.isEmpty {
-                self.output(.save(tasks: text, tasklist: tasklist))
-            }
+                    }.joined(separator: "\n")
+                if !text.isEmpty {
+                    self.output(.save(tasks: text, tasklist: tasklist))
+                }
+            })
         }
+        titleEditViewController.titleEditController.addObserver(self, forKeyPath: #keyPath(TitleEditController.isValidData), options: [.initial, .new], context: nil)
+        
         addChild(titleEditViewController)
         taskCreateView.taskTitleInputView.addSubview(titleEditViewController.view)
         titleEditViewController.view.pinEdgesToSuperview()
@@ -47,5 +52,13 @@ class TaskCreateViewController: UIViewController, Interactable
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         keyboard.stopObservingKeyboard()
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == #keyPath(TitleEditController.isValidData) {
+            if let dic = change, let value = dic[NSKeyValueChangeKey.newKey] as? NSNumber {
+                taskCreateView.setButtonIsEnabled(isEnabled: value.boolValue)
+            }
+        }
     }
 }

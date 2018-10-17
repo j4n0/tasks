@@ -44,13 +44,11 @@ class TaskCreateView: UIView
         $0.layer.cornerRadius = 16/2
         $0.layer.masksToBounds = true
         $0.clipsToBounds = true
-        TaskCreateView.setButtonIsEnabled(button: $0, isEnabled: true)
-        print("🙄 pending save button enable/disable")
     }
     
-    static func setButtonIsEnabled(button: UIButton, isEnabled: Bool){
-        button.isEnabled = isEnabled
-        button.alpha = isEnabled ? 1.0 : 0.5
+    func setButtonIsEnabled(isEnabled: Bool){
+        saveButton.isEnabled = isEnabled
+        saveButton.alpha = isEnabled ? 1.0 : 0.5
     }
     
     @objc func didSave(){
@@ -72,6 +70,7 @@ class TaskCreateView: UIView
     
     private func initialize()
     {
+        setButtonIsEnabled(isEnabled: false)
         backgroundColor = UIColor(hexString: "#fffeff")
         addSubview(closeButton)
         addSubview(taskTitleInputView)
