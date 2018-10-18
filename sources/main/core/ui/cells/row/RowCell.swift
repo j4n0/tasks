@@ -1,7 +1,7 @@
 
 import UIKit
 
-class RowCell: Cell<RowCellView>
+final class RowCell: Cell<RowCellView>
 {
     override init(frame: CGRect){
         super.init(frame: frame)

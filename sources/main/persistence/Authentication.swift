@@ -1,7 +1,7 @@
 
 import Foundation
 
-public class Authentication: NSObject
+final public class Authentication: NSObject
 {
     let company: String
     let authorizationHeader: [String: String]

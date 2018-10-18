@@ -1,7 +1,7 @@
 
 import Foundation
 
-public class Store<store: KeyValueStore>: NSObject, StoreType
+final public class Store<store: KeyValueStore>: NSObject, StoreType
 {
     private func read<T>(for key: String) -> T? {
         return store.serializer.read(key) as? T

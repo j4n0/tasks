@@ -1,7 +1,7 @@
 
 import Foundation
 
-class Plist
+final class Plist
 {
     let dictionary: [String: String]?
     

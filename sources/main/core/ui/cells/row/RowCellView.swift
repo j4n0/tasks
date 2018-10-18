@@ -7,7 +7,7 @@ final class RowCellView: UIView
         $0.font = UIFont(name: "HelveticaNeue-Light", size: UIFont.preferredFont(forTextStyle: .body).pointSize)
     }
     private let separator = UIView().then {
-        $0.backgroundColor = UIColor(hexString: "#e0e3e6")
+        $0.backgroundColor = environment.style.separator.color()
     }
     
     init() {

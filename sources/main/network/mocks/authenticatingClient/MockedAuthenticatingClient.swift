@@ -1,7 +1,7 @@
 
 import Foundation
 
-class MockedAuthenticatingClient: AuthenticatingClient
+final class MockedAuthenticatingClient: AuthenticatingClient
 {
     // stubbed JSON for the AccessTokenResponse
     let tokenJson: Data? = {

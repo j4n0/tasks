@@ -4,7 +4,7 @@ import XCTest
 
 extension XCTestCase
 {
-    class Dummy {}
+    private final class Dummy {}
     
     static func decodeJsonFile<T: Decodable>(resource: String, withExtension ext: String) -> T? {
         guard let url = Bundle(for: Dummy.self).url(forResource: resource, withExtension: ext) else {

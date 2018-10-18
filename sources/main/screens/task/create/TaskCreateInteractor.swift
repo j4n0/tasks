@@ -2,7 +2,7 @@
 import os
 import Foundation
 
-class TaskCreateInteractor: Interactable
+final class TaskCreateInteractor: Interactable
 {
     var taskCreateModel = TaskCreateModel()
     
@@ -45,8 +45,8 @@ class TaskCreateInteractor: Interactable
                 return
             }
             os_log("%@", "\(quickAddResponse)")
-            os_log("Tasks created: %@", tasks)
-            environment.coordinator.pop()
+            NotificationCenter.default.post(name: Notification.Name.tasksSaved, object: nil)
+            environment.coordinator.dismissWithSuccess()
         })
     }
     
@@ -72,10 +72,17 @@ class TaskCreateInteractor: Interactable
     
 }
 
-class TaskCreateModel
+final class TaskCreateModel
 {
     var taskLists = [Tasklist]()
     var selectedTaskList: UInt?
     var tasks = [String]()
     var userId: UInt?
+}
+
+extension Notification.Name
+{
+    static var tasksSaved: Notification.Name {
+        return .init(rawValue: "TaskCreateInteractor.tasksSaved")
+    }
 }

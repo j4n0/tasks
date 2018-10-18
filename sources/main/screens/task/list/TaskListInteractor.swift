@@ -7,7 +7,7 @@ struct ProjectItems {
     let items: [TodoItem]
 }
 
-class TaskListInteractor: Interactable
+final class TaskListInteractor: Interactable
 {
     // Interactable
     var output: ((TaskListViewUpdate) -> Void) = { event in os_log("Got event %@ but override is missing.", "\(event)") }

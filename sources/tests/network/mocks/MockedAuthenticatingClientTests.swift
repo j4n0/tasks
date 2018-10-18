@@ -2,7 +2,7 @@
 import XCTest
 @testable import Tasks
 
-class MockedAuthenticatingClientTests: XCTestCase
+final class MockedAuthenticatingClientTests: XCTestCase
 {
     // when passed a mocked session that returns the JSON for an AccessTokenResponse
     func testAccessToken()

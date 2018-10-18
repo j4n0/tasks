@@ -1,7 +1,7 @@
 
 import UIKit
 
-class TitleEditController: NSObject
+final class TitleEditController: NSObject
 {
     var rows: [InputRowModel]
     weak var tableDataSource: TableDataSource<InputRowCell>?

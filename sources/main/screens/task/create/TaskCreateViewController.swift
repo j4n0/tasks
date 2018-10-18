@@ -2,7 +2,7 @@
 import os
 import UIKit
 
-class TaskCreateViewController: UIViewController, Interactable
+final class TaskCreateViewController: UIViewController, Interactable
 {
     // Interactable
     typealias Output = TaskCreateViewEvent

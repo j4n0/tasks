@@ -1,7 +1,7 @@
 
 import UIKit
 
-public class Coordinator: UIResponder
+final public class Coordinator: UIResponder
 {
     enum Screen {
         case login
@@ -31,6 +31,29 @@ public class Coordinator: UIResponder
         }
     }
     
+    func present(screen: Screen){
+        DispatchQueue.main.async {
+            let controller = self.controller(screen: screen)
+            self.navigationController.topViewController?.present(controller, animated: true, completion: nil)
+        }
+    }
+    
+    func dismiss(){
+        DispatchQueue.main.async {
+            self.navigationController.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func dismissWithSuccess(){
+        slideInTransitioningDelegate.feedbackAnimation = .completion
+        dismiss()
+    }
+    
+    func dismissWithDiscardAnimation(){
+        slideInTransitioningDelegate.feedbackAnimation = .discard
+        dismiss()
+    }
+    
     func pop(){
         DispatchQueue.main.async {
             self.navigationController.popViewController(animated: true)
@@ -45,6 +68,8 @@ public class Coordinator: UIResponder
         }
     }
     
+    lazy var slideInTransitioningDelegate = SlideInTransitioningDelegate()
+    
     func controller(screen: Screen) -> UIViewController {
         switch screen {
         case .login:
@@ -53,7 +78,10 @@ public class Coordinator: UIResponder
         case .taskList:
             return build() as TaskListViewController
         case .taskCreate:
-            return build() as TaskCreateViewController
+            let controller = build() as TaskCreateViewController
+            controller.transitioningDelegate = slideInTransitioningDelegate
+            controller.modalPresentationStyle = .custom
+            return controller
         case .taskDetail(let todoItem):
             return TaskDetailViewController(todoItem: todoItem)
         }

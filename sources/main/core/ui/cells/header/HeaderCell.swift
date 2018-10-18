@@ -1,4 +1,4 @@
 
 import Foundation
 
-class HeaderCell: Cell<HeaderCellView> {}
+final class HeaderCell: Cell<HeaderCellView> {}

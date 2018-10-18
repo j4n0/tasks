@@ -2,7 +2,7 @@
 import XCTest
 @testable import Tasks
 
-class CoordinatorTests: XCTestCase
+final class CoordinatorTests: XCTestCase
 {
     func testCoordinatorInitialisedWithTasks() {
         let coordinator = Coordinator(screen: .taskList)

@@ -2,7 +2,7 @@
 import os
 import UIKit
 
-class TaskCreateView: UIView
+final class TaskCreateView: UIView
 {
     var didClickClose: ()->() = { os_log("You clicked close. Override this handler.") }
     var didClickSave: (Tasklist)->() = { tasklist in os_log("You clicked save. Override this handler.") }
@@ -89,7 +89,7 @@ class TaskCreateView: UIView
             "H:|[separatorLine]|",
             "V:|[separatorLine(1)]",
             "H:|[bottomStrip]|",
-            "V:|-48-[taskTitleInputView][bottomStrip(48)]",
+            "V:|-38-[taskTitleInputView][bottomStrip(48)]",
             "H:|-10-[taskListLabel]-20-[saveButton(60)]-10-|",
             "V:[saveButton]-|"
             ].forEach {

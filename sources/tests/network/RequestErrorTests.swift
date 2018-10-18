@@ -2,7 +2,7 @@
 import XCTest
 @testable import Tasks
 
-class RequestErrorTests: XCTestCase
+final class RequestErrorTests: XCTestCase
 {
     struct DummyParsingError: Error {}
     let resource = Resource(path: "")

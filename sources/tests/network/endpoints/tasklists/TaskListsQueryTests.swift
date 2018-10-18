@@ -2,7 +2,7 @@
 import XCTest
 @testable import Tasks
 
-class TaskListsQueryTests: XCTestCase
+final class TaskListsQueryTests: XCTestCase
 {
     private let page = RandomValues.randomString
     private let pageSize: String = RandomValues.randomString

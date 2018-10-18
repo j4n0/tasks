@@ -1,6 +1,6 @@
 import Foundation
 
-public class QuickAddBody: Codable
+final public class QuickAddBody: Codable
 {
     public var content: String
     public var tasklistId: Int?
@@ -23,7 +23,7 @@ public class QuickAddBody: Codable
     }
 }
 
-public class QuickAddItem: Codable
+public final class QuickAddItem: Codable
 {
     public var responsiblePartyId: String?
     public var startDate: String?

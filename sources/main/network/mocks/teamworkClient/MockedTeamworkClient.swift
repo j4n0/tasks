@@ -2,7 +2,7 @@
 import Foundation
 import os
 
-class MockedTeamworkClient: TeamworkClient
+final class MockedTeamworkClient: TeamworkClient
 {
     var mockedSession = MockURLSession()
     

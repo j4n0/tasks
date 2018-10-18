@@ -1,7 +1,7 @@
 
 import Foundation
 
-class MockURLSession
+final class MockURLSession
 {
     var nextDataTask = MockURLSessionDataTask()
     var nextData: Data?

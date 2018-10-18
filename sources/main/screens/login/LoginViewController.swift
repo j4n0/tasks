@@ -2,7 +2,7 @@
 import os
 import WebKit
 
-class LoginViewController: UIViewController
+final class LoginViewController: UIViewController
 {
     private var webView = WKWebView(frame: .zero, configuration: WKWebViewConfiguration())
     

@@ -2,7 +2,7 @@
 import XCTest
 @testable import Tasks
 
-class TeamworkClientTests: XCTestCase
+final class TeamworkClientTests: XCTestCase
 {
     let configuration = PlistConfiguration(forResource: "teamworkClientConfiguration", ofType: "plist", bundle: Bundle(for: TeamworkClientTests.self))
     

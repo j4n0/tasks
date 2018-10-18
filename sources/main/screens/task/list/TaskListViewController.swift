@@ -2,9 +2,8 @@
 import os
 import UIKit
 
-class TaskListViewController: UIViewController, Interactable
+final class TaskListViewController: UIViewController, Interactable
 {
-    // Interactable
     typealias Output = TaskListViewEvent
     var output: ((TaskListViewEvent) -> Void) = { event in os_log("Got event %@ but override is missing.", "\(event)") }
     
@@ -21,7 +20,12 @@ class TaskListViewController: UIViewController, Interactable
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(TaskListViewController.updateTasks(_:)), name: NSNotification.Name.tasksSaved, object: nil)
         layout()
+    }
+    
+    @objc func updateTasks(_ notification: Notification){
+        self.output(.viewIsReady)
     }
     
     func layout(){

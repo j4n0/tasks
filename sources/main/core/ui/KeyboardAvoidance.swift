@@ -2,12 +2,7 @@
 import UIKit
 
 /**
- Handle keyboard avoidance.
- 
- On iOS 11 it uses the additionalSafeAreaInsets to decrease the size of the controller view.
- On iOS <11 you have to provide a closure in the initializer to adjust your ui based on the height of the keyboard.
- 
- Usage:
+ Handle keyboard avoidance. It uses the additionalSafeAreaInsets to decrease the size of the controller view. Usage:
  ```
  lazy var keyboard = KeyboardAvoidance(viewController: self)
 
@@ -22,7 +17,7 @@ import UIKit
  }
  ```
  */
-class KeyboardAvoidance {
+final class KeyboardAvoidance {
     
     private unowned var viewController: UIViewController
     private var onKeyboardWillChangeHeight: (CGFloat) -> Void = { height in

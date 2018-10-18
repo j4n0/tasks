@@ -2,7 +2,7 @@
 import os
 import Foundation
 
-class PlistConfiguration: Configuration
+final class PlistConfiguration: Configuration
 {
     enum Keys: String {
         case company = "Company"

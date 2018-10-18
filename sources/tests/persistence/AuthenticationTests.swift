@@ -2,7 +2,7 @@
 import XCTest
 @testable import Tasks
 
-class AuthenticationTests: XCTestCase
+final class AuthenticationTests: XCTestCase
 {
     let company = "Acme"
     let authorizationHeaderKey = "Authorization"

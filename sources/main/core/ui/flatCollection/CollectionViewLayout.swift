@@ -8,7 +8,7 @@ enum CollectionDisplay {
     case grid
 }
 
-class CollectionViewLayout: UICollectionViewFlowLayout
+final class CollectionViewLayout: UICollectionViewFlowLayout
 {
     var display: CollectionDisplay = .grid {
         didSet {

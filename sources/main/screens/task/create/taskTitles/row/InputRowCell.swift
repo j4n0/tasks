@@ -1,4 +1,4 @@
 
 import UIKit
 
-class InputRowCell: TableCell<InputRowCellView> {}
+final class InputRowCell: TableCell<InputRowCellView> {}

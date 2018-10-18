@@ -2,7 +2,7 @@
 import os
 import UIKit
 
-class TitleEditViewController: UIViewController
+final class TitleEditViewController: UIViewController
 {
     private var tableView = UITableView()
     lazy var tableDataSource = TableDataSource<InputRowCell>(tableView: self.tableView)
@@ -25,7 +25,7 @@ class TitleEditViewController: UIViewController
     }
     
     func layout(){
-        view.backgroundColor = .green
+        view.backgroundColor = .white
         view.addSubview(tableView)
         tableView.separatorStyle = .none
         tableView.pinEdgesToSafeAreas()

@@ -2,9 +2,9 @@
 import XCTest
 @testable import Tasks
 
-class PlistConfigurationTests: XCTestCase
+final class PlistConfigurationTests: XCTestCase
 {
-    class Dummy{}
+    final class Dummy{}
     
     let expectedCompany = "Acme"
     let expectedApiKey = "DEADBEEF"

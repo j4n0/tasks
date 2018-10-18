@@ -1,7 +1,7 @@
 
 import UIKit
 
-class CollectionDataSource<C: CellType, H: CellType>: NSObject, UICollectionViewDataSource
+final class CollectionDataSource<C: CellType, H: CellType>: NSObject, UICollectionViewDataSource
 {
     var sections = [Section<C.T>]()
     

@@ -1,7 +1,7 @@
 
 import UIKit
 
-class TableDataSource<C: CellType & UITableViewCell>: NSObject, UITableViewDataSource
+final class TableDataSource<C: CellType & UITableViewCell>: NSObject, UITableViewDataSource
 {
     var sections = [Section<C.T>]()
     

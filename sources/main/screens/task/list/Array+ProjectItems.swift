@@ -7,7 +7,8 @@ extension Array where Element == ProjectItems {
     {
         let itemsByProjectName = type(of: self).mapItemsByProjectName(todoItems: todoItems)
         let projectItems = itemsByProjectName.map({ (key: String, value: [TodoItem]) -> ProjectItems in
-            return ProjectItems(projectName: key, items: value)
+            let items = value.sorted { ($0.content?.lowercased() ?? "") < ($1.content?.lowercased() ?? "") }
+            return ProjectItems(projectName: key, items: items)
         })
         self.init(projectItems)
     }

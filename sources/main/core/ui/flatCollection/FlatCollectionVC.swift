@@ -24,7 +24,7 @@ extension FlatCollectionVC: Injectable
     }
 }
 
-class FlatCollectionVC: UIViewController, Interactable
+final class FlatCollectionVC: UIViewController, Interactable
 {
     // Interactable
     var output: ((FlatCollectionEvent) -> Void) = { event in os_log("Got event %@ but override is missing.", "\(event)") }
@@ -117,7 +117,7 @@ extension FlatCollectionVC: UIViewControllerPreviewingDelegate
     }
 }
 
-class PreviewDelegate: UIResponder
+final class PreviewDelegate: UIResponder
 {
     init(controllerForIndexPath: @escaping (IndexPath) -> UIViewController) {
         self.controllerForIndexPath = controllerForIndexPath

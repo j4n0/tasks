@@ -2,7 +2,7 @@
 import XCTest
 @testable import Tasks
 
-class AllTasksResponseTests: XCTestCase
+final class AllTasksResponseTests: XCTestCase
 {
     func testEncodeResponse(){
         let decoded: AllTasksResponse? = XCTestCase.decodeJsonFile(resource: "allTasksResponse", withExtension: "json")

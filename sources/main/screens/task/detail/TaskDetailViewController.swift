@@ -1,7 +1,7 @@
 
 import UIKit
 
-class TaskDetailViewController: UIViewController
+final class TaskDetailViewController: UIViewController
 {
     let todoItem: TodoItem
     

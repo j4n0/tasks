@@ -5,7 +5,7 @@ final class InputRowCellView: UIView
 {
     lazy var textField = UITextField().then {
         $0.font = UIFont(name: "HelveticaNeue-Light", size: UIFont.preferredFont(forTextStyle: .body).pointSize)
-        $0.placeholder = "New Row"
+        $0.placeholder = "New Todo"
         $0.delegate = self
     }
     let separator = UIView().then {

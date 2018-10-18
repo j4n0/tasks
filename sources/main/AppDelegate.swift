@@ -13,7 +13,7 @@ enum QuickActionIdentifier: String {
 }
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate
+final class AppDelegate: UIResponder, UIApplicationDelegate
 {
     var window: UIWindow?
     
@@ -49,7 +49,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         }
         switch shortcutIdentifier {
         case .newTask:
-            environment.coordinator.show(screens: [.taskList, .taskCreate])
+            environment.coordinator.show(screen: .taskList)
+            environment.coordinator.present(screen: .taskCreate)
         }
         return true
     }

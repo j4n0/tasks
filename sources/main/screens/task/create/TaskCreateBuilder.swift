@@ -20,7 +20,7 @@ extension TaskCreateViewController: Injectable
     func input(_ input: TaskCreateViewUpdate) {
         DispatchQueue.main.async {
             switch input {
-            case .tasklist(let tasklist): self.taskCreateView.tasklist = tasklist
+                case .tasklist(let tasklist): self.taskCreateView.tasklist = tasklist
             }
         }
     }
@@ -34,7 +34,7 @@ extension TaskCreateInteractor: Injectable
         case .newRow(let row, let text): os_log("implement create row %d %@", row, text)
         case .removeRow(let row): os_log("implement remove row %d", row)
         case .save(let tasks, let tasklist): save(tasks: tasks, taskList: tasklist)
-        case .dismiss: environment.coordinator.pop()
+        case .dismiss: environment.coordinator.dismissWithDiscardAnimation()
         case .viewIsReady:
             updateUserId()
             updateViewWithTaskList()

@@ -2,7 +2,7 @@
 import XCTest
 @testable import Tasks
 
-class UserDefaultsKeyValueStoreTests: XCTestCase
+final class UserDefaultsKeyValueStoreTests: XCTestCase
 {
     private let store = Store<UserDefaultsKeyValueStore>()
     

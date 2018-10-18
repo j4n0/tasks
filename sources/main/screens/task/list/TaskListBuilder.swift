@@ -40,7 +40,7 @@ extension TaskListInteractor: Injectable
     func input(_ input: Input){
         switch input {
         case .clickedPlus:
-            environment.coordinator.show(screen: .taskCreate)
+            environment.coordinator.present(screen: .taskCreate)
         case .clickedRow(let indexPath, _):
             let todoItem = projectItems[indexPath.section].items[indexPath.row]
             environment.coordinator.show(screen: .taskDetail(todoItem))

@@ -10,7 +10,7 @@ struct LoginDetails {
     static let loginURL = URL(string: "https://www.teamwork.com/launchpad/login?redirect_uri=\(loginCallback)")!
 }
 
-class LoginInteractor: NSObject
+final class LoginInteractor: NSObject
 {
     var coordinator: Coordinator
     

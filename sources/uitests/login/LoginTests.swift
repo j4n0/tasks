@@ -2,7 +2,7 @@
 import XCTest
 @testable import Tasks
 
-class LoginTests: XCTestCase
+final class LoginTests: XCTestCase
 {
     var app: XCUIApplication!
     

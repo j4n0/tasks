@@ -2,7 +2,7 @@
 import XCTest
 @testable import Tasks
 
-class TasksSubQueryTests: XCTestCase
+final class TasksSubQueryTests: XCTestCase
 {
     let randomDate = RandomValues.date_YYYYMMDD
     let randomDateAndTime = RandomValues.dateTime_YYYYMMDDHHmmss

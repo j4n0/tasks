@@ -2,7 +2,7 @@
 import XCTest
 @testable import Tasks
 
-class GetAllTasksTests: XCTestCase
+final class GetAllTasksTests: XCTestCase
 {
     let baseURL = URL(string: "http://tasks.com")!
 
@@ -27,7 +27,7 @@ class GetAllTasksTests: XCTestCase
     }
     
     func testEncodeResponse(){
-        let decoded: AllTasksResponse? = XCTestCase.decodeJsonFile(resource: "AllTasksResponse", withExtension: "json")
+        let decoded: AllTasksResponse? = XCTestCase.decodeJsonFile(resource: "allTasksResponse", withExtension: "json")
         guard let todoItem = decoded?.todoItems?.first else {
             XCTFail("Expected an item")
             return
