@@ -44,7 +44,7 @@ final class TaskCreateInteractor: Interactable
             guard case let .success(quickAddResponse) = result else {
                 return
             }
-            os_log("%@", "\(quickAddResponse)")
+            os_log(.info, log: OSLog.default, "%@", "\(quickAddResponse)")
             NotificationCenter.default.post(name: Notification.Name.tasksSaved, object: nil)
             environment.coordinator.dismissWithSuccess()
         })
@@ -52,7 +52,7 @@ final class TaskCreateInteractor: Interactable
     
     static func createQuickAddBody(tasks: String, creatorId: Int, taskList: Tasklist) -> QuickAddBody? {
         guard let id = taskList.id, let tasklistId = Int(id) else {
-            os_log("The tasklist id doesn’t contain an integer. It was %@", "\(taskList.id ?? "nil")")
+            os_log(.debug, log: OSLog.default, "The tasklist id doesn’t contain an integer. It was %@", "\(taskList.id ?? "nil")")
             return nil
         }
         let body = QuickAddBody(content: tasks)

@@ -14,7 +14,7 @@ final public class AppEnvironment: Environment
         if let company = configuration?.company, let apiKey = configuration?.apiKey {
             self.init(authentication: Authentication(company: company, apiKey: apiKey))
         } else {
-            os_log("The configuration doesn’t contain authentication credentials")
+            os_log(.debug, log: OSLog.default, "The configuration doesn’t contain authentication credentials")
             self.init(authentication: nil)
         }
     }
@@ -22,11 +22,11 @@ final public class AppEnvironment: Environment
     init(authentication: Authentication?){
         let auth = authentication ?? store.authentication
         if authentication == nil {
-            os_log("No authentication passed.")
+            os_log(.debug, log: OSLog.default, "No authentication passed.")
             if auth == nil {
-                os_log("No authentication in the store either. Login required")
+                os_log(.debug, log: OSLog.default, "No authentication in the store either. Login required")
             } else {
-                os_log("Found an authentication in the store.")
+                os_log(.debug, log: OSLog.default, "Found an authentication in the store.")
             }
         }
         self.coordinator = Coordinator(screen: auth == nil ? .login : .taskList)

@@ -40,7 +40,8 @@ final class TaskCreateView: UIView
     let saveButton = UIButton().then {
         $0.addTarget(self, action: #selector(TaskCreateView.didSave), for: .touchUpInside)
         $0.backgroundColor = UIColor(hexString: "#3973fd")
-        $0.setTitle("  Save  ", for: .normal)
+        let title = NSLocalizedString("Save", comment: "")
+        $0.setTitle("  \(title)  ", for: .normal)
         $0.layer.cornerRadius = 16/2
         $0.layer.masksToBounds = true
         $0.clipsToBounds = true

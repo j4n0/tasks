@@ -17,7 +17,7 @@ extension FlatCollectionVC: Injectable
     func input(_ input: FlatCollectionUpdate) {
         switch input {
         case .load(let sections):
-            os_log("Reloading data: %d sections", sections.count)
+            os_log(.debug, log: OSLog.default, "Reloading data: %d sections", sections.count)
             datasource.sections = sections
             collectionView.reloadData()
         }
@@ -53,7 +53,7 @@ final class FlatCollectionVC: UIViewController, Interactable
             self.input(.load(sections: sections))
         }
         self.datasource.sections = sections
-        os_log("show headers? %d", showHeaders)
+        os_log(.debug, log: OSLog.default, "show headers? %d", showHeaders)
     }
     
     required init?(coder aDecoder: NSCoder) {

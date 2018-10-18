@@ -1,0 +1,9 @@
+
+"RequestError.malformedAuthenticationCode" = "Failed to build valid JSON with this authentication code: %@";
+"RequestError.noDataReturned" = "No data returned";
+"RequestError.httpStatus" = "HTTP error status %d";
+"RequestError.urlLoading" = "URL loading error %@. See https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes";
+"RequestError.unexpected" = "Unexpected error";
+"RequestError.parsing" = "Parsing error: %@";
+"RequestError.invalidEndpointDefinition" = "Invalid endpoint definition. Resource: %@, URL: %@";
+"Save" = "Save";

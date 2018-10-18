@@ -29,7 +29,7 @@ final class TaskListInteractor: Interactable
                     self.projectItems = [ProjectItems](todoItems: todoItems)
                 }
             case .error(let e):
-                os_log("Downloading all tasks: %@", e.localizedDescription)
+                os_log(.debug, log: OSLog.default, "Downloading all tasks: %@", e.localizedDescription)
             }
         }
     }

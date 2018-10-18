@@ -46,11 +46,11 @@ func build() -> TaskCreateViewController {
     let interactor = TaskCreateInteractor()
     let controller = TaskCreateViewController()
     interactor.output = { [unowned controller] update in
-        os_log("view update: %@", "\(update)")
+        os_log(.debug, log: OSLog.default, "view update: %@", "\(update)")
         controller.input(update)
     }
     controller.output = { event in
-        os_log("event: %@", "\(event)")
+        os_log(.debug, log: OSLog.default, "event: %@", "\(event)")
         interactor.input(event)
     }
     return controller

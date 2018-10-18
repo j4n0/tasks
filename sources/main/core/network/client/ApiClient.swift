@@ -2,7 +2,9 @@
 import os
 import UIKit
 
-//- A generic API client. This will be subclassed for real clients.
+let networkLog = OSLog(subsystem: "es.com.jano.tasks.network", category: "Network")
+
+// A generic API client. This will be subclassed for real clients.
 public class ApiClient
 {
     let session: URLSessionProtocol
@@ -13,18 +15,20 @@ public class ApiClient
         self.baseURL = baseURL
     }
     
-    // Fetch the given HTTP resource and call completion.
     func fetch<T: Decodable>(resource: Resource, completion: @escaping ApiResultCompletion<T>)
     {
-        // invalid request
         guard let request = URLRequest(resource: resource, baseURL: baseURL) else {
             completion(.error(RequestError.invalidEndpointDefinition(resource, baseURL)))
             return
         }
         
-        os_log("Request URL: %@", "\(request.url as Any)")
-        os_log("Request method: %@", "\(request.httpMethod as Any)")
-        os_log("Request headers: %@", "\(request.allHTTPHeaderFields as Any)")
+        os_log(.debug, log: networkLog, "URL %@", "")
+        os_log(.debug, log: networkLog, "Request URL: %@", "\(request.url as Any)")
+        os_log(.debug, log: networkLog, "Request method: %@", "\(request.httpMethod as Any)")
+        os_log(.debug, log: networkLog, "Request headers: %@", "\(request.allHTTPHeaderFields as Any)")
+        
+        let signpostID = OSSignpostID(log: networkLog, object: self)
+        os_signpost(.begin, log: networkLog, name: "network task", signpostID: signpostID, "%s %s", "\(request.httpMethod as Any)", "\(request.url as Any)")
         
         let task: URLSessionDataTaskProtocol = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
 
@@ -52,6 +56,7 @@ public class ApiClient
             let result: ApiResult<T> = self.parse(data)
             self.logResponse(data: data, response: httpResponse)
             completion(result)
+            os_signpost(.end, log: networkLog, name: "network task", signpostID: signpostID, "")
         }
         
         task.resume()
@@ -70,24 +75,18 @@ public class ApiClient
     }
     
     // remove-me
-    private func logResponse(data: Data?, response: HTTPURLResponse){
-        response.url.flatMap {
-            os_log(.debug, log: OSLog.default, "URL %@", $0.absoluteString)
+    private func logResponse(data: Data?, response: HTTPURLResponse)
+    {
+        guard networkLog.isEnabled(type: .debug) else {
+            return
         }
-        os_log(.debug, log: OSLog.default, "HTTP status: %d", response.statusCode)
-        os_log(.debug, log: OSLog.default, "Response headers: %@", response.allHeaderFields)
+        response.url.flatMap {
+            os_log(.debug, log: networkLog, "URL %@", $0.absoluteString)
+        }
+        os_log(.debug, log: networkLog, "HTTP status: %d", response.statusCode)
+        os_log(.debug, log: networkLog, "Response headers: %@", response.allHeaderFields)
         if let data = data {
-            os_log(.debug, log: OSLog.default, "Data: %d bytes", data.count)
-            if let jsonObject = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers),
-                let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject, options: JSONSerialization.WritingOptions.prettyPrinted),
-                let string = String(data: jsonData, encoding: String.Encoding.utf8)
-            {
-                os_log(.debug, log: OSLog.default, "%@", string)
-            }
-            else if let body = String(data: data, encoding: .utf8)
-            {
-                os_log(.debug, log: OSLog.default, "Response body: %@", body)
-            }
+            os_log(.debug, log: networkLog, "Data: %d bytes", data.count)
         }
     }
 }

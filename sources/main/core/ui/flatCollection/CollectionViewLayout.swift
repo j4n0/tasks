@@ -31,14 +31,14 @@ final class CollectionViewLayout: UICollectionViewFlowLayout
     func configLayout()
     {
         guard let collectionView = collectionView else {
-            os_log("Collection view not prepared. It is nil. Skipping layout.")
+            os_log(.debug, log: OSLog.default, "Collection view not prepared. It is nil. Skipping layout.")
             return
         }
         guard collectionView.frame.width > 0 else {
-            os_log("Collection view not prepared. It has 0 width. Skipping layout.")
+            os_log(.debug, log: OSLog.default, "Collection view not prepared. It has 0 width. Skipping layout.")
             return
         }
-        os_log("Collection view ready, configuring layout with display %@", "\(display)")
+        os_log(.debug, log: OSLog.default, "Collection view ready, configuring layout with display %@", "\(display)")
         switch display {
         case .inline:
             self.scrollDirection = .horizontal
@@ -59,8 +59,8 @@ final class CollectionViewLayout: UICollectionViewFlowLayout
                 self.itemSize = CGSize(width: collectionView.frame.width , height: 60)
             }
         }
-        os_log("layout scrollDirection is %d", scrollDirection.rawValue)
-        os_log("layout item size is %@", "\(itemSize)")
+        os_log(.debug, log: OSLog.default, "layout scrollDirection is %d", scrollDirection.rawValue)
+        os_log(.debug, log: OSLog.default, "layout item size is %@", "\(itemSize)")
     }
     
     override func invalidateLayout() {

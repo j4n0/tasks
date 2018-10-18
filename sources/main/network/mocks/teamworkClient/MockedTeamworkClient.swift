@@ -14,7 +14,7 @@ final class MockedTeamworkClient: TeamworkClient
     func data(forResource name: String, ofType type: String) -> Data? {
         guard let url = Bundle.main.url(forResource: name, withExtension: type) else { return nil }
         guard let data = try? Data(contentsOf: url) else {
-            os_log("Nothing found for resource %@.%@", name, type)
+            os_log(.error, log: OSLog.default, "Nothing found for resource %@.%@", name, type)
             return nil
         }
         return data

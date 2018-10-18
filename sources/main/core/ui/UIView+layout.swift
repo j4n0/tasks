@@ -6,7 +6,7 @@ extension UIView
 {
     func pinEdgesToSuperview(){
         guard let superview = superview else {
-            os_log("Expected to find a superview for %@", "\(self)")
+            os_log(.error, log: OSLog.default, "Expected to find a superview for %@", "\(self)")
             return
         }
         translatesAutoresizingMaskIntoConstraints = false

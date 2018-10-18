@@ -76,7 +76,7 @@ public class TeamworkClient: ApiClient
         case .success(_):
             completion(result)
         case .error(let e):
-            os_log("%@", e.localizedDescription)
+            os_log(.error, log: OSLog.default, "%@", e.localizedDescription)
             completion(.error(e))
         }
     }
