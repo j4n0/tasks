@@ -23,7 +23,6 @@ enum TaskListViewUpdate {
 
 extension TaskListViewController: Injectable
 {
-    typealias Input = TaskListViewUpdate
     func input(_ input: TaskListViewUpdate) {
         DispatchQueue.main.async {
             switch input {
@@ -36,8 +35,7 @@ extension TaskListViewController: Injectable
 
 extension TaskListInteractor: Injectable
 {
-    typealias Input = TaskListViewEvent
-    func input(_ input: Input){
+    func input(_ input: TaskListViewEvent){
         switch input {
         case .clickedPlus:
             environment.coordinator.present(screen: .taskCreate)
@@ -61,8 +59,8 @@ func build() -> TaskListViewController {
     controller.output = { event in
         interactor.input(event)
     }
-    controller.flatCollectionVC.previewDelegate = PreviewDelegate{ indexPath in
-        return interactor.controllerForIndexPath(indexPath: indexPath)
+    controller.flatCollectionVC.previewDelegate = PreviewDelegate { indexPath in
+        return interactor.taskDetailController(for: indexPath)
     }
     return controller
 }

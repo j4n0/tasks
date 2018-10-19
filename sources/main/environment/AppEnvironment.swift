@@ -8,7 +8,7 @@ final public class AppEnvironment: Environment
     public var store: StoreType = Store<UserDefaultsKeyValueStore>()
     public var teamworkClient: TeamworkClient?
     public var authenticatingClient = AuthenticatingClient()
-    public var style: StyleElement = StyleElement.decodeJsonFile(resource: "style", withExtension: "json")!
+    public var style: StyleElements = StyleElements.decodeJsonFile(resource: "style", withExtension: "json")!
     
     convenience init(configuration: Configuration?){
         if let company = configuration?.company, let apiKey = configuration?.apiKey {

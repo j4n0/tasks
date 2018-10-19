@@ -11,6 +11,7 @@ final public class Coordinator: UIResponder
     }
     
     private(set) var navigationController: UINavigationController!
+    lazy var slideInTransitioningDelegate = SlideInTransitioningDelegate()
     
     init(screen: Screen){
         super.init()
@@ -44,7 +45,7 @@ final public class Coordinator: UIResponder
         }
     }
     
-    func dismissWithSuccess(){
+    func dismissWithSuccessAnimation(){
         slideInTransitioningDelegate.feedbackAnimation = .completion
         dismiss()
     }
@@ -67,9 +68,7 @@ final public class Coordinator: UIResponder
             self.navigationController.present(alert, animated: true, completion: nil)
         }
     }
-    
-    lazy var slideInTransitioningDelegate = SlideInTransitioningDelegate()
-    
+
     func controller(screen: Screen) -> UIViewController {
         switch screen {
         case .login:

@@ -9,7 +9,6 @@ struct ProjectItems {
 
 final class TaskListInteractor: Interactable
 {
-    // Interactable
     var output: ((TaskListViewUpdate) -> Void) = { event in os_log("Got event %@ but override is missing.", "\(event)") }
     
     var projectItems = [ProjectItems]() {
@@ -18,8 +17,6 @@ final class TaskListInteractor: Interactable
             output(.load(sections: sections))
         }
     }
-    
-    // MARK: - Other
     
     func downloadTasks(){
         environment.teamworkClient?.allTasks { (result) in
@@ -34,7 +31,7 @@ final class TaskListInteractor: Interactable
         }
     }
     
-    func controllerForIndexPath(indexPath: IndexPath) -> TaskDetailViewController {
+    func taskDetailController(for indexPath: IndexPath) -> TaskDetailViewController {
         let todoItem = projectItems[indexPath.section].items[indexPath.row]
         return TaskDetailViewController(todoItem: todoItem)
     }

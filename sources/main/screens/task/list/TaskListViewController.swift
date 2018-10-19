@@ -4,7 +4,6 @@ import UIKit
 
 final class TaskListViewController: UIViewController, Interactable
 {
-    typealias Output = TaskListViewEvent
     var output: ((TaskListViewEvent) -> Void) = { event in os_log("Got event %@ but override is missing.", "\(event)") }
     
     lazy var flatCollectionVC = FlatCollectionVC(sections: [], showHeaders: true).then {
@@ -20,12 +19,8 @@ final class TaskListViewController: UIViewController, Interactable
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(TaskListViewController.updateTasks(_:)), name: NSNotification.Name.tasksSaved, object: nil)
         layout()
-    }
-    
-    @objc func updateTasks(_ notification: Notification){
-        self.output(.viewIsReady)
+        observeUpdateTasks()
     }
     
     func layout(){
@@ -43,5 +38,13 @@ final class TaskListViewController: UIViewController, Interactable
     
     @objc func logout(){
         self.output(.clickedLogout)
+    }
+    
+    func observeUpdateTasks(){
+        NotificationCenter.default.addObserver(self, selector: #selector(TaskListViewController.updateTasks(_:)), name: NSNotification.Name.tasksSaved, object: nil)
+    }
+    
+    @objc func updateTasks(_ notification: Notification){
+        self.output(.viewIsReady)
     }
 }

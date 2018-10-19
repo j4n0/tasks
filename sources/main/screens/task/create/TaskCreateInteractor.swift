@@ -46,7 +46,7 @@ final class TaskCreateInteractor: Interactable
             }
             os_log(.info, log: OSLog.default, "%@", "\(quickAddResponse)")
             NotificationCenter.default.post(name: Notification.Name.tasksSaved, object: nil)
-            environment.coordinator.dismissWithSuccess()
+            environment.coordinator.dismissWithSuccessAnimation()
         })
     }
     

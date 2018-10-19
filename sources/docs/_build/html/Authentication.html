@@ -1,0 +1,318 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Authentication &mdash; Tasks  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Design" href="Design.html" />
+    <link rel="prev" title="Teamwork Mobile Technical Test" href="Specification.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Tasks
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Specification.html">Teamwork Mobile Technical Test</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Authentication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#get-an-api-key">Get an API key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-an-authentication-token">Get an authentication token</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-get-token-with-curl">Example: get token with Curl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-curl-endpoint-with-api-key">Example: curl endpoint with API key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-curl-endpoint-with-token">Example: curl endpoint with Token</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Design.html">Design</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Tasks</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Authentication</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Authentication.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="authentication">
+<h1>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h1>
+<p>To start using the API in your project you need either an API key or an authentication token.</p>
+<div class="section" id="get-an-api-key">
+<h2>Get an API key<a class="headerlink" href="#get-an-api-key" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Log to your project using the details provided in the specification page.</li>
+<li>Go to your profile (top, right), and click on “Edit My Details”.</li>
+<li>Go to the tab API &amp; Mobile. Click Show your Token. For me, it was <code class="docutils literal notranslate"><span class="pre">twp_k9ejP88LcuojHjmFkUFuYIUNYalg</span></code> (yours will be different).</li>
+</ol>
+</div>
+<div class="section" id="get-an-authentication-token">
+<h2>Get an authentication token<a class="headerlink" href="#get-an-authentication-token" title="Permalink to this headline">¶</a></h2>
+<p>The page <a class="reference external" href="https://developer.teamwork.com/projects/authentication-questions/how-to-authenticate-via-app-login-flow">How to Authenticate via App Login Flow</a> explains the steps, which are as follow:</p>
+<ol class="arabic simple">
+<li>Open <a class="reference external" href="https://www.teamwork.com/launchpad/login?redirect_uri=customprotocolapp://whatever">https://www.teamwork.com/launchpad/login?redirect_uri=customprotocolapp://whatever</a> in a webview.</li>
+<li>Fill the login and password in the form that appears.</li>
+<li>Once logged the page will redirect to the <code class="docutils literal notranslate"><span class="pre">customprotocolapp://whatever</span></code> you passed before, and an authentication token will be added. You need to capture this code. In iOS you can do so intercepting the call, for instance, in a <a class="reference external" href="https://developer.apple.com/documentation/webkit/wknavigationdelegate">WKNavigationDelegate</a>.</li>
+<li>Once you have the code, run a HTTP POST to <a class="reference external" href="https://www.teamwork.com/launchpad/v1/token.json">https://www.teamwork.com/launchpad/v1/token.json</a> with body <code class="docutils literal notranslate"><span class="pre">{&quot;code&quot;:&quot;BANANAS&quot;}</span></code> where <em>BANANAS</em> is the authentication code we got in the previous step.</li>
+</ol>
+<p>My access token response was:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;access_token&quot;</span><span class="p">:</span> <span class="s2">&quot;tkn.v1_MThiNDkzNTUtNmI5MS00NmIyLThhYmQtOWYxNTdjNTBjYWFkLTM0OTcwNS4yMzA5MDcuVVM=&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;installation&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">349705</span><span class="p">,</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;yat&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;region&quot;</span><span class="p">:</span> <span class="s2">&quot;US&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;apiEndPoint&quot;</span><span class="p">:</span> <span class="s2">&quot;https://yat.teamwork.com/&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://yat.teamwork.com/&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;chatEnabled&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;company&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">113332</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Cat&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;logo&quot;</span><span class="p">:</span> <span class="s2">&quot;https://s3.amazonaws.com/TWFiles/&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;logo&quot;</span><span class="p">:</span> <span class="s2">&quot;https://tw-webserver2.teamworkpm.net/sites/yat/images/1471525490286_wild-yak.jpg&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;user&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">230907</span><span class="p">,</span>
+        <span class="nt">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;Cat&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Cat&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;yat@triplespin.com&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;avatar&quot;</span><span class="p">:</span> <span class="s2">&quot;https://s3.amazonaws.com/TWFiles/349705/userAvatar/tf_C21F3016-CD19-C60F-E82B23120C506FEE.Tac_the_Psychotic_Cat.jpg&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;company&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">113332</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Cat&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;logo&quot;</span><span class="p">:</span> <span class="s2">&quot;https://s3.amazonaws.com/TWFiles/&quot;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li>Store the access_token and submit further API requests to the API URL with header <code class="docutils literal notranslate"><span class="pre">Authorization:</span> <span class="pre">Bearer</span> <span class="pre">CAFEBABE</span></code> where <em>CAFEBABE</em> is the access token you got in the previous step.</li>
+</ol>
+</div>
+<div class="section" id="example-get-token-with-curl">
+<h2>Example: get token with Curl<a class="headerlink" href="#example-get-token-with-curl" title="Permalink to this headline">¶</a></h2>
+<p>Open <code class="docutils literal notranslate"><span class="pre">https://www.teamwork.com/launchpad/login?redirect_uri=customprotocolapp://whatever</span></code> in your browser, login, and copy the resulting code. It will be something like customprotocolapp://whatever?code=13fb3653-669b-45ca-a710-b06e239b85d3. If you want to see the page, it’s just a bunch of JS references.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>curl -s https://www.teamwork.com/launchpad/login?redirect_uri=customprotocolapp://whatever | tidy
+</pre></div>
+</div>
+<p>Now post it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Accept: application/json&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{&quot;code&quot;:&quot;13fb3653-669b-45ca-a710-b06e239b85d3&quot;}&#39;</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">teamwork</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">launchpad</span><span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="n">token</span><span class="o">.</span><span class="n">json</span> <span class="o">|</span> <span class="n">python</span> <span class="o">-</span><span class="n">mjson</span><span class="o">.</span><span class="n">tool</span>
+</pre></div>
+</div>
+<p>My token was <code class="docutils literal notranslate"><span class="pre">tkn.v1_MThiNDkzNTUtNmI5MS00NmIyLThhYmQtOWYxNTdjNTBjYWFkLTM0OTcwNS4yMzA5MDcuVVM=</span></code>. Use it to read the projects.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Accept: application/json&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Authorization: Bearer tkn.v1_MThiNDkzNTUtNmI5MS00NmIyLThhYmQtOWYxNTdjNTBjYWFkLTM0OTcwNS4yMzA5MDcuVVM=&quot;</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">yat</span><span class="o">.</span><span class="n">teamwork</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">projects</span><span class="o">.</span><span class="n">json</span> <span class="o">|</span> <span class="n">python</span> <span class="o">-</span><span class="n">mjson</span><span class="o">.</span><span class="n">tool</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-curl-endpoint-with-api-key">
+<h2>Example: curl endpoint with API key<a class="headerlink" href="#example-curl-endpoint-with-api-key" title="Permalink to this headline">¶</a></h2>
+<p>Use the following API call format:</p>
+<ul class="simple">
+<li>The API base URL is <a class="reference external" href="https://ACCOUNT.teamwork.com">https://ACCOUNT.teamwork.com</a>. According to <a class="reference external" href="https://developer.teamwork.com/projects/finding-your-url-and-api-key/api-key-and-url">this</a> it’s on your project website at profile &gt; Settings &gt; General tab &gt; Site Address.</li>
+<li>The API path is one documented in the API reference. For instance, for <a class="reference external" href="https://developer.teamwork.com/projects/projects/retrieve-all-projects">Retrieve All Projects</a> is <code class="docutils literal notranslate"><span class="pre">/projects.json</span></code>.</li>
+<li>Add a header <code class="docutils literal notranslate"><span class="pre">Accept:</span> <span class="pre">application/json</span></code>. Just being pedantic, you still get a JSON without it because curl issues an <code class="docutils literal notranslate"><span class="pre">Accept:</span> <span class="pre">*/*</span></code> by default.</li>
+<li>Add a header <code class="docutils literal notranslate"><span class="pre">Authorization:</span> <span class="pre">BASIC</span> <span class="pre">CAFEBABE</span></code>, replacing CAFEBABE with your API key encoded in base64. Why base 64? it says so in <a class="reference external" href="http://www.rfc-editor.org/rfc/rfc7617.txt">RFC7617</a>.</li>
+</ul>
+<p>Let’s try this for the account “yat” and the endpoint <a class="reference external" href="https://developer.teamwork.com/projects/projects/retrieve-all-projects">/projects.json</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Accept: application/json&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Authorization: BASIC `echo -n twp_k9ejP88LcuojHjmFkUFuYIUNYalg | base64`&quot;</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">yat</span><span class="o">.</span><span class="n">teamwork</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">projects</span><span class="o">.</span><span class="n">json</span> <span class="o">|</span> <span class="n">python</span> <span class="o">-</span><span class="n">mjson</span><span class="o">.</span><span class="n">tool</span>
+</pre></div>
+</div>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">-n</span></code> avoids passing an extra new line character.</p>
+</div>
+<div class="section" id="example-curl-endpoint-with-token">
+<h2>Example: curl endpoint with Token<a class="headerlink" href="#example-curl-endpoint-with-token" title="Permalink to this headline">¶</a></h2>
+<p>This is the curl one-liner to read the projects using the authentication token we got before.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Accept: application/json&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Authorization: Bearer tkn.v1_MThiNDkzNTUtNmI5MS00NmIyLThhYmQtOWYxNTdjNTBjYWFkLTM0OTcwNS4yMzA5MDcuVVM=&quot;</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">yat</span><span class="o">.</span><span class="n">teamwork</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">projects</span><span class="o">.</span><span class="n">json</span> <span class="o">|</span> <span class="n">python</span> <span class="o">-</span><span class="n">mjson</span><span class="o">.</span><span class="n">tool</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Design.html" class="btn btn-neutral float-right" title="Design" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Specification.html" class="btn btn-neutral" title="Teamwork Mobile Technical Test" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Alejandro Ramirez.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

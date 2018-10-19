@@ -4,7 +4,6 @@ import UIKit
 
 final class TaskCreateViewController: UIViewController, Interactable
 {
-    // Interactable
     typealias Output = TaskCreateViewEvent
     var output: ((TaskCreateViewEvent) -> Void) = { event in os_log("Got event %@ but override is missing.", "\(event)") }
     

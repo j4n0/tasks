@@ -5,7 +5,7 @@ protocol Style {
     var headline: (UILabel)->() { get }
 }
 
-public struct StyleElement: Codable
+public struct StyleElements: Codable
 {
     let separator: HexColor
     let background: HexColor
