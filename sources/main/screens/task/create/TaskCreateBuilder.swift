@@ -3,15 +3,15 @@ import Foundation
 import os
 
 enum TaskCreateViewEvent {
-    case newRow(row: Int, text: String)        // user wants to create another task
-    case removeRow(row: Int)                   // user wants to remove a task
-    case save(tasks: String, tasklist: Tasklist) // user clicked save
-    case dismiss                               // user clicked dismiss
-    case viewIsReady                           // the view is ready to receive data
+    case newRow(row: Int, text: String)
+    case removeRow(row: Int)
+    case save(tasks: String, tasklist: Tasklist)
+    case dismiss
+    case viewIsReady
 }
 
 enum TaskCreateViewUpdate {
-    case tasklist(tasklist: Tasklist) // update the project title
+    case tasklist(tasklist: Tasklist) 
 }
 
 extension TaskCreateViewController: Injectable
